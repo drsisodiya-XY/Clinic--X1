@@ -1,159 +1,157 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Anand Singh | Advanced Homeopathy</title>
-<script src="https://cdn.tailwindcss.com"></script>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Anand Singh | Premium Homeopathic Care</title>
 
-<style>
-body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a}
-.sidebar{width:260px}
-.glass{background:rgba(255,255,255,0.7);backdrop-filter:blur(10px)}
-.card:hover{transform:translateY(-6px);transition:.3s}
-</style>
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    .glass {
+      background: rgba(255,255,255,0.7);
+      backdrop-filter: blur(10px);
+    }
+  </style>
 </head>
 
-<body class="flex">
+<body class="bg-gradient-to-br from-white to-green-50 text-gray-800">
 
-<!-- SIDEBAR -->
-<aside class="sidebar fixed h-full bg-white border-r border-gray-200 p-6">
-  <h1 class="text-2xl font-bold text-emerald-600 mb-10">Dr. Anand Singh</h1>
-  <nav class="space-y-4 font-semibold text-gray-600">
-    <a href="#home" class="block hover:text-emerald-600">Home</a>
-    <a href="#about" class="block hover:text-emerald-600">About</a>
-    <a href="#treatments" class="block hover:text-emerald-600">Treatments</a>
-    <a href="#research" class="block hover:text-emerald-600">Research</a>
-    <a href="#reviews" class="block hover:text-emerald-600">Reviews</a>
-    <a href="#book" class="block hover:text-emerald-600">Book Appointment</a>
+<!-- Sidebar -->
+<div class="fixed left-0 top-0 h-full w-64 bg-white border-r hidden md:block">
+  <div class="p-6 border-b">
+    <h1 class="text-xl font-bold text-green-700">Dr. Anand Singh</h1>
+    <p class="text-sm text-gray-500">Homeopathy Consultant</p>
+  </div>
+
+  <nav class="p-6 space-y-4 font-medium">
+    <a href="#about" class="block hover:text-green-700">About</a>
+    <a href="#services" class="block hover:text-green-700">Treatments</a>
+    <a href="#research" class="block hover:text-green-700">Research</a>
+    <a href="#reviews" class="block hover:text-green-700">Reviews</a>
+    <a href="#contact" class="block hover:text-green-700">Appointment</a>
   </nav>
-</aside>
 
-<!-- MAIN CONTENT -->
-<main class="ml-[260px] w-full">
-
-<!-- HERO -->
-<section id="home" class="min-h-screen flex items-center px-16 bg-white">
-  <div>
-    <h1 class="text-5xl font-bold mb-6">
-      Advanced Homeopathic Care<br>
-      <span class="text-emerald-600">Trusted for 20+ Years</span>
-    </h1>
-    <p class="text-gray-600 max-w-xl mb-8">
-      Specializing in classical and modern homeopathy with a research-based approach to chronic disease management.
-    </p>
-    <a href="#book" class="bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold">
-      Book Consultation
-    </a>
+  <div class="absolute bottom-6 left-6 text-sm text-gray-500">
+    📞 +91 98765 43210
   </div>
-</section>
+</div>
 
-<!-- ABOUT -->
-<section id="about" class="py-20 px-16 bg-gray-50">
-  <h2 class="text-3xl font-bold mb-10">About Dr. Anand Singh</h2>
-  <p class="max-w-3xl text-gray-600 leading-relaxed">
-    With over two decades of clinical experience, Dr. Anand Singh specializes in constitutional prescribing,
-    chronic disease management, and integrative homeopathic care. His approach combines classical principles
-    with modern diagnostic insights to ensure safe, long-lasting healing.
+<div class="md:ml-64">
+
+<!-- Hero -->
+<section class="min-h-screen flex flex-col justify-center items-center text-center px-6">
+  <h1 class="text-5xl md:text-7xl font-extrabold text-green-800 mb-6">
+    Premium Homeopathic Care
+  </h1>
+  <p class="max-w-2xl text-lg text-gray-600 mb-10">
+    20+ years of excellence in classical and modern homeopathy. Trusted, safe, and personalized healing.
   </p>
+  <a href="#contact" class="bg-green-700 text-white px-8 py-4 rounded-full font-bold hover:bg-green-800 transition shadow-lg">
+    Book Consultation
+  </a>
 </section>
 
-<!-- TREATMENTS -->
-<section id="treatments" class="py-20 px-16">
-  <h2 class="text-3xl font-bold mb-12">Specialized Treatments</h2>
-  <div class="grid md:grid-cols-3 gap-8">
-    <div class="p-6 bg-white rounded-xl shadow card">
+<!-- About -->
+<section id="about" class="py-16 px-6 max-w-6xl mx-auto">
+  <div class="glass p-10 rounded-2xl shadow">
+    <h2 class="text-3xl font-bold text-green-800 mb-4">About Dr. Anand Singh</h2>
+    <p class="text-gray-700 leading-relaxed">
+      With over 20 years of clinical experience, Dr. Anand Singh specializes in classical and modern homeopathy.
+      His patient-centered approach ensures safe, holistic, and long-lasting results for chronic and acute diseases.
+    </p>
+  </div>
+</section>
+
+<!-- Services -->
+<section id="services" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-green-800 mb-10">Treatments</h2>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="glass p-6 rounded-xl shadow hover:shadow-xl transition">
+      <h3 class="font-semibold text-lg mb-2">Chronic Diseases</h3>
+      <p>Asthma, arthritis, thyroid & long-term illnesses.</p>
+    </div>
+    <div class="glass p-6 rounded-xl shadow hover:shadow-xl transition">
       <h3 class="font-semibold text-lg mb-2">Skin Disorders</h3>
-      <p class="text-gray-600 text-sm">Eczema, psoriasis, acne & chronic skin conditions.</p>
+      <p>Eczema, psoriasis, allergies & fungal infections.</p>
     </div>
-    <div class="p-6 bg-white rounded-xl shadow card">
-      <h3 class="font-semibold text-lg mb-2">Respiratory Diseases</h3>
-      <p class="text-gray-600 text-sm">Asthma, allergies, chronic sinusitis.</p>
-    </div>
-    <div class="p-6 bg-white rounded-xl shadow card">
-      <h3 class="font-semibold text-lg mb-2">Neurological Issues</h3>
-      <p class="text-gray-600 text-sm">Migraines, anxiety, sleep disorders.</p>
+    <div class="glass p-6 rounded-xl shadow hover:shadow-xl transition">
+      <h3 class="font-semibold text-lg mb-2">Child Care</h3>
+      <p>Gentle and safe treatment for children.</p>
     </div>
   </div>
 </section>
 
-<!-- RESEARCH -->
-<section id="research" class="py-20 px-16 bg-gray-50">
-  <h2 class="text-3xl font-bold mb-12">Clinical Research</h2>
-  <div class="space-y-6">
-    <div class="p-6 bg-white rounded-xl shadow">
-      <h3 class="font-semibold">Asthma Constitutional Study</h3>
-      <p class="text-gray-600 text-sm">Long-term improvement in chronic asthma cases using individualized remedies.</p>
-    </div>
-    <div class="p-6 bg-white rounded-xl shadow">
-      <h3 class="font-semibold">Psoriasis Case Documentation</h3>
-      <p class="text-gray-600 text-sm">Steroid-free remission through homeopathic treatment.</p>
+<!-- Research -->
+<section id="research" class="py-16 px-6 bg-green-50">
+  <div class="max-w-6xl mx-auto">
+    <h2 class="text-3xl font-bold text-green-800 mb-6">Research & Clinical Work</h2>
+    <div class="grid md:grid-cols-2 gap-8">
+      <div class="glass p-6 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Chronic Allergy Case Study</h3>
+        <p>Successful treatment using constitutional homeopathy.</p>
+      </div>
+      <div class="glass p-6 rounded-xl shadow">
+        <h3 class="font-semibold mb-2">Skin Disorder Research</h3>
+        <p>Evidence-based results in psoriasis management.</p>
+      </div>
     </div>
   </div>
 </section>
 
-<!-- REVIEWS -->
-<section id="reviews" class="py-20 px-16">
-  <h2 class="text-3xl font-bold mb-12">Patient Reviews</h2>
-
-  <div class="grid md:grid-cols-3 gap-8 mb-10">
-    <div class="p-6 bg-white rounded-xl shadow">
-      <p>"My asthma improved drastically within months."</p>
-      <span class="text-emerald-600 text-sm">— Neha Sharma</span>
+<!-- Reviews -->
+<section id="reviews" class="py-16 px-6">
+  <h2 class="text-3xl font-bold text-center text-green-800 mb-10">Patient Reviews</h2>
+  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+    <div class="glass p-6 rounded-xl shadow">
+      <p>"Excellent care and professional approach."</p>
+      <span class="block mt-4 font-semibold">— Ramesh Kumar</span>
     </div>
-    <div class="p-6 bg-white rounded-xl shadow">
-      <p>"Best doctor for chronic skin conditions."</p>
-      <span class="text-emerald-600 text-sm">— Ravi Kumar</span>
+    <div class="glass p-6 rounded-xl shadow">
+      <p>"My chronic skin issue improved greatly."</p>
+      <span class="block mt-4 font-semibold">— Priya Sharma</span>
     </div>
-    <div class="p-6 bg-white rounded-xl shadow">
-      <p>"Professional, caring and effective treatment."</p>
-      <span class="text-emerald-600 text-sm">— Amit Verma</span>
+    <div class="glass p-6 rounded-xl shadow">
+      <p>"Highly recommended for holistic treatment."</p>
+      <span class="block mt-4 font-semibold">— Amit Verma</span>
     </div>
-  </div>
-
-  <!-- Add Review -->
-  <div class="max-w-xl">
-    <input id="reviewName" placeholder="Your Name" class="w-full p-3 mb-3 border rounded">
-    <textarea id="reviewText" placeholder="Your Review" class="w-full p-3 mb-3 border rounded"></textarea>
-    <button onclick="addReview()" class="bg-emerald-600 text-white px-6 py-2 rounded-full">Submit Review</button>
-    <div id="reviewList" class="mt-4 text-gray-700"></div>
   </div>
 </section>
 
-<!-- BOOKING -->
-<section id="book" class="py-20 px-16 bg-gray-50">
-  <h2 class="text-3xl font-bold mb-10">Book Appointment</h2>
-  <form onsubmit="sendWA(event)" class="max-w-xl space-y-4">
-    <input id="name" placeholder="Patient Name" required class="w-full p-3 border rounded">
-    <input id="issue" placeholder="Medical Issue" required class="w-full p-3 border rounded">
-    <button class="bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold">
-      Confirm via WhatsApp
-    </button>
-  </form>
+<!-- Appointment -->
+<section id="contact" class="py-16 px-6 max-w-4xl mx-auto">
+  <div class="glass p-8 rounded-2xl shadow">
+    <h2 class="text-3xl font-bold text-green-800 mb-6 text-center">Book Appointment</h2>
+    <form class="space-y-4">
+      <input type="text" placeholder="Full Name" class="w-full border p-3 rounded">
+      <input type="tel" placeholder="Phone Number" class="w-full border p-3 rounded">
+      <input type="text" placeholder="Health Concern" class="w-full border p-3 rounded">
+      <button class="w-full bg-green-700 text-white py-3 rounded hover:bg-green-800">
+        Submit Request
+      </button>
+    </form>
+    <p class="text-center text-gray-600 mt-4">📞 +91 98765 43210</p>
+  </div>
 </section>
 
-<footer class="p-6 text-center text-gray-500 text-sm">
-  © 2026 Dr. Anand Singh Clinic • All Rights Reserved
+<!-- Footer -->
+<footer class="border-t py-6 text-center text-sm text-gray-600 bg-white">
+  © <span id="year"></span> Dr. Anand Singh. All Rights Reserved.<br>
+  Website Design & Development: Deepak Sisodiya
 </footer>
 
-</main>
+</div>
+
+<!-- WhatsApp -->
+<a href="https://wa.me/919876543210" target="_blank"
+   class="fixed bottom-6 right-6 bg-green-700 text-white px-5 py-3 rounded-full shadow-lg hover:bg-green-800">
+   WhatsApp
+</a>
 
 <script>
-function sendWA(e){
-  e.preventDefault();
-  const n=document.getElementById("name").value;
-  const i=document.getElementById("issue").value;
-  window.open(`https://wa.me/919415808611?text=Appointment%0AName:${n}%0AIssue:${i}`);
-}
-
-function addReview(){
-  const name=document.getElementById("reviewName").value;
-  const text=document.getElementById("reviewText").value;
-  if(!name||!text) return;
-  document.getElementById("reviewList").innerHTML += `<p class="mt-2">"${text}" — <span class="text-emerald-600">${name}</span></p>`;
-}
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
 
 </body>
-</html>/</html>
+</html>
