@@ -1,196 +1,192 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Dr. Anand Singh | Premium Homeopathic Care</title>
-script src="https://cdn.tailwindcss.com"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-<style>
-:root {
-  --green: #166534;
-  --light: #f0fdf4;
-}
-body { font-family: 'Segoe UI', sans-serif; }
-.fade-in { opacity:0; transform:translateY(20px); transition:all .8s ease; }
-.fade-in.show { opacity:1; transform:translateY(0); }
-.dark { background-color: #111827; color: #f3f4f6; }
-.dark .bg-white { background-color: #1f2937; }
-.dark .text-gray-800 { color: #f3f4f6; }
-.dark .bg-green-50 { background-color: #064e3b; }
-.dark .bg-green-900 { background-color: #064e3b; }
-.dark .text-green-800 { color: #bbf7d0; }
-/* Counter */
-.counter { font-size: 3rem; font-weight: bold; }
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dr. Anand Singh | Premium Homeopathic Care</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Inter', sans-serif; }
+    .hero-bg { 
+      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1559757148-5e995136c87b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1974&q=80');
+      background-size: cover; background-position: center; 
+    }
+    .fade-in { opacity:0; transform:translateY(40px); transition:all 1s ease; }
+    .fade-in.show { opacity:1; transform:translateY(0); }
+    .card { transition: all 0.3s ease; }
+    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
+  </style>
 </head>
-<body class="bg-white text-gray-800 transition-colors duration-300">
+<body class="bg-gray-50 text-gray-900">
 
-<!-- Dark Mode Toggle -->
-<button id="darkModeToggle" class="fixed top-4 right-20 z-50 bg-gray-200 dark:bg-gray-700 p-3 rounded-full shadow-lg">
-  <i class="fas fa-moon text-xl"></i>
-</button>
+<!-- NAVBAR Premium -->
+<nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-green-100">
+  <div class="max-w-7xl mx-auto px-6">
+    <div class="flex justify-between items-center py-5">
+      <div class="flex items-center gap-4">
+        <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-3xl">AS</div>
+        <div>
+          <h1 class="text-2xl font-bold text-green-800">Dr. Anand Singh</h1>
+          <p class="text-sm text-gray-600">Premium Homeopathic Care</p>
+        </div>
+      </div>
 
-<!-- NAVBAR -->
-<nav class="sticky top-0 z-50 bg-white dark:bg-gray-900 shadow-md transition-colors">
-  <div class="max-w-7xl mx-auto px-6 py-4 flex justify-between items-center">
-    <div>
-      <h1 class="text-xl font-bold text-green-800 dark:text-green-300">Dr. Anand Singh</h1>
-      <p class="text-xs text-gray-500 dark:text-gray-400">Premium Homeopathic Care</p>
+      <!-- Desktop Menu + Search -->
+      <div class="hidden lg:flex items-center gap-8">
+        <div class="relative">
+          <input type="text" id="search" placeholder="Search treatments (e.g. Skin, Thyroid)" class="w-80 pl-10 pr-4 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
+          <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+        </div>
+        <a href="#about" class="font-medium hover:text-green-700 transition">About</a>
+        <a href="#treatments" class="font-medium hover:text-green-700 transition">Treatments</a>
+        <a href="#gallery" class="font-medium hover:text-green-700 transition">Gallery</a>
+        <a href="#reviews" class="font-medium hover:text-green-700 transition">Reviews</a>
+      </div>
+
+      <div class="flex items-center gap-4">
+        <a href="tel:+919415808611" class="hidden md:flex items-center gap-2 px-5 py-3 border border-green-700 text-green-700 rounded-full hover:bg-green-700 hover:text-white transition">
+          <i class="fas fa-phone"></i> Call
+        </a>
+        <a href="#book" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 transition">Book Now</a>
+        <button id="menuBtn" class="lg:hidden text-3xl text-green-700">
+          <i class="fas fa-bars"></i>
+        </button>
+      </div>
     </div>
-    <div class="hidden md:flex gap-6 items-center font-medium">
-      <a href="#about" class="hover:text-green-700 dark:hover:text-green-300">About</a>
-      <a href="#treatments" class="hover:text-green-700 dark:hover:text-green-300">Treatments</a>
-      <a href="#gallery" class="hover:text-green-700 dark:hover:text-green-300">Gallery</a>
-      <a href="#reviews" class="hover:text-green-700 dark:hover:text-green-300">Reviews</a>
-      <a href="tel:+919415808611" class="border border-green-700 text-green-800 dark:text-green-300 px-4 py-2 rounded-full hover:bg-green-700 hover:text-white transition">📞 Call</a>
-      <a href="#book" class="bg-green-700 text-white px-5 py-2 rounded-full hover:bg-green-800">Book</a>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="hidden lg:hidden pb-6 space-y-4 text-lg font-medium">
+      <a href="#about" class="block hover:text-green-700">About</a>
+      <a href="#treatments" class="block hover:text-green-700">Treatments</a>
+      <a href="#gallery" class="block hover:text-green-700">Gallery</a>
+      <a href="#reviews" class="block hover:text-green-700">Reviews</a>
+      <a href="tel:+919415808611" class="block text-green-700">📞 Call Now</a>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
-<section class="bg-green-900 dark:bg-green-950 text-white text-center py-24 px-6 fade-in">
-  <h2 class="text-4xl md:text-6xl font-bold mb-6">Premium Homeopathic Care</h2>
-  <p class="text-lg md:text-xl mb-6">20+ Years of Trusted Clinical Excellence</p>
-  <div class="flex justify-center gap-4 flex-wrap">
-    <a href="#book" class="bg-white text-green-900 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100">Book Consultation</a>
-    <a href="https://wa.me/919415808611" class="bg-green-600 px-6 py-3 rounded-lg font-semibold hover:bg-green-700">WhatsApp</a>
-  </div>
-  <p class="mt-6 text-green-200 font-semibold">📞 Call: +91 94158 08611</p>
-</section>
-
-<!-- ABOUT + Counters -->
-<section id="about" class="py-20 max-w-6xl mx-auto px-6 fade-in">
-  <h3 class="text-3xl font-bold text-green-800 dark:text-green-300 mb-6 text-center">About Doctor</h3>
-  <p class="text-lg text-gray-600 dark:text-gray-300 leading-relaxed text-center max-w-3xl mx-auto">
-    Dr. Anand Singh is a senior homeopathic consultant with 20+ years of experience in Classical and Modern Homeopathy. Specializes in chronic disease management, skin disorders, respiratory care, and holistic healing.
-  </p>
-  <div class="grid md:grid-cols-3 gap-8 mt-12 text-center">
-    <div>
-      <div class="counter text-green-700 dark:text-green-300" data-count="20">0+</div>
-      <p class="text-xl font-semibold">Years Experience</p>
-    </div>
-    <div>
-      <div class="counter text-green-700 dark:text-green-300" data-count="5000">0+</div>
-      <p class="text-xl font-semibold">Patients Treated</p>
-    </div>
-    <div>
-      <div class="counter text-green-700 dark:text-green-300" data-count="98">0%</div>
-      <p class="text-xl font-semibold">Satisfaction Rate</p>
+<!-- HERO Full Premium -->
+<section class="hero-bg h-[90vh] flex items-center text-white relative fade-in">
+  <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Root-Cause Healing with Premium Homeopathy</h1>
+    <p class="text-xl md:text-3xl mb-10 max-w-3xl mx-auto">20+ Years Experience • Safe • No Side Effects • Trusted Results</p>
+    <div class="flex flex-wrap justify-center gap-6">
+      <a href="#book" class="bg-white text-green-900 px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition shadow-lg">Book Consultation</a>
+      <a href="https://wa.me/919415808611?text=Hello%20Doctor%2C%20appointment%20ke%20liye%20baat%20karni%20hai" class="border-2 border-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-green-900 transition">WhatsApp Now</a>
     </div>
   </div>
 </section>
 
-<!-- TREATMENTS -->
-<section id="treatments" class="bg-green-50 dark:bg-green-900 py-20 px-6 fade-in">
-  <h3 class="text-3xl font-bold text-center text-green-800 dark:text-green-300 mb-12">Specialized Treatments</h3>
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <!-- Same as before, cards here... (copy from your original) -->
-    <div class="bg-white dark:bg-gray-800 p-6 rounded-xl shadow hover:shadow-lg transition">
-      <h4 class="font-bold text-xl mb-2 text-green-700 dark:text-green-300">Chronic Diseases</h4>
-      <p class="dark:text-gray-300">Long-term holistic treatment for diabetes, arthritis, thyroid & more.</p>
-    </div>
-    <!-- Add other cards similarly -->
-  </div>
-</section>
-
-<!-- BEFORE-AFTER GALLERY (New Advance Feature) -->
-<section id="gallery" class="py-20 px-6 fade-in">
-  <h3 class="text-3xl font-bold text-center text-green-800 dark:text-green-300 mb-12">Before & After Results</h3>
-  <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
-    <div class="group relative overflow-hidden rounded-xl shadow-lg">
-      <img src="https://via.placeholder.com/400x300?text=Before+Skin+Issue" alt="Before" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <p class="text-white text-xl font-bold">Before Treatment</p>
+<!-- About + Counters -->
+<section id="about" class="py-24 bg-white fade-in">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12">About Dr. Anand Singh</h2>
+    <p class="text-lg text-gray-700 max-w-4xl mx-auto text-center leading-relaxed mb-16">
+      Senior Homeopathic Consultant with over 20 years in classical & modern homeopathy. Specializing in chronic illnesses, skin disorders, respiratory issues, and holistic wellness. Personalized, root-cause treatments for lasting relief.
+    </p>
+    <div class="grid md:grid-cols-3 gap-12 text-center">
+      <div>
+        <div class="text-6xl font-bold text-green-700">20+</div>
+        <p class="text-xl font-semibold mt-4">Years of Excellence</p>
+      </div>
+      <div>
+        <div class="text-6xl font-bold text-green-700">5000+</div>
+        <p class="text-xl font-semibold mt-4">Happy Patients</p>
+      </div>
+      <div>
+        <div class="text-6xl font-bold text-green-700">98%</div>
+        <p class="text-xl font-semibold mt-4">Satisfaction Rate</p>
       </div>
     </div>
-    <div class="group relative overflow-hidden rounded-xl shadow-lg">
-      <img src="https://via.placeholder.com/400x300?text=After+Clear+Skin" alt="After" class="w-full h-64 object-cover transition-transform duration-500 group-hover:scale-110">
-      <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
-        <p class="text-white text-xl font-bold">After Treatment</p>
-      </div>
-    </div>
-    <!-- Add 4-6 more similar cards for different cases (Eczema, Psoriasis, etc.) -->
   </div>
-  <p class="text-center mt-8 text-gray-600 dark:text-gray-300">Results vary. Anonymized patient cases with consent.</p>
 </section>
 
-<!-- REVIEWS with Slider -->
-<section id="reviews" class="bg-green-50 dark:bg-green-900 py-20 px-6 fade-in">
-  <h3 class="text-3xl font-bold text-center text-green-800 dark:text-green-300 mb-12">Patient Reviews</h3>
-  <div id="testimonialSlider" class="relative max-w-4xl mx-auto overflow-hidden">
-    <div class="flex transition-transform duration-500 ease-in-out">
-      <div class="min-w-full p-6 bg-white dark:bg-gray-800 rounded-xl shadow">
-        <p class="italic">"Excellent treatment. My asthma improved significantly."</p>
-        <p class="mt-4 font-bold text-green-700 dark:text-green-300">– Rajesh Kumar ⭐⭐⭐⭐⭐</p>
+<!-- Treatments Grid -->
+<section id="treatments" class="py-24 bg-green-50 fade-in">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-16">Specialized Treatments</h2>
+    <div class="grid md:grid-cols-3 gap-10">
+      <div class="card bg-white p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">Chronic Diseases</h3>
+        <p class="text-gray-600">Diabetes, Thyroid, Arthritis – long-term holistic care.</p>
       </div>
-      <!-- Add 2-3 more testimonials -->
+      <div class="card bg-white p-8 rounded-2xl shadow-xl">
+        <h3 class="text-2xl font-bold text-green-700 mb-4">Skin Disorders</h3>
+        <p class="text-gray-600">Eczema, Psoriasis, Acne – clear skin naturally.</p>
+      </div>
+      <!-- Add 3-4 more cards similarly for Respiratory, Child Health, etc. -->
     </div>
   </div>
 </section>
 
-<!-- FAQ Accordion (New) -->
-<section class="py-20 px-6 fade-in">
-  <h3 class="text-3xl font-bold text-center text-green-800 dark:text-green-300 mb-12">Frequently Asked Questions</h3>
-  <div class="max-w-4xl mx-auto space-y-4">
-    **Summary:**
-How does homeopathy work?
-      <p class="mt-2 text-gray-600 dark:text-gray-300">It stimulates the body's natural healing...</p>
-    <!-- Add 4-5 more FAQs -->
+<!-- Gallery / Before-After -->
+<section id="gallery" class="py-24 bg-white fade-in">
+  <div class="max-w-6xl mx-auto px-6">
+    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-16">Before & After Results</h2>
+    <div class="grid md:grid-cols-3 gap-8">
+      <!-- Add 6 cards with placeholder images -->
+      <div class="overflow-hidden rounded-2xl shadow-xl">
+        <img src="https://via.placeholder.com/600x400?text=Before+Treatment" alt="Before" class="w-full h-80 object-cover">
+        <div class="p-6 bg-gray-50">
+          <h4 class="font-bold text-xl">Before</h4>
+        </div>
+      </div>
+      <!-- Duplicate for After images -->
+    </div>
   </div>
 </section>
 
-<!-- BOOKING (WhatsApp Form already enhanced) -->
-<section id="book" class="py-20 px-6 fade-in">
-  <!-- Your form code here, same as before with JS submit to WhatsApp -->
-</section>
-
-<!-- LOCATION (Placeholder - baad mein change) -->
-<section class="py-20 px-6 bg-green-50 dark:bg-green-900 fade-in">
-  <h3 class="text-3xl font-bold text-center text-green-800 dark:text-green-300 mb-10">Clinic Location</h3>
-  <div class="rounded-xl overflow-hidden shadow-2xl max-w-4xl mx-auto">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3560.0!2d80.349761!3d26.449923!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x399c477e00000001%3A0x0!2sKanpur%2C%20Uttar%20Pradesh!5e0!3m2!1sen!2sin!4v1730000000000!5m2!1sen!2sin" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+<!-- Booking Form -->
+<section id="book" class="py-24 bg-green-50 fade-in">
+  <div class="max-w-2xl mx-auto px-6">
+    <h2 class="text-4xl font-bold text-center text-green-800 mb-12">Book Your Appointment</h2>
+    <form id="bookForm" class="space-y-6 bg-white p-10 rounded-2xl shadow-2xl">
+      <input type="text" placeholder="Full Name" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+      <input type="tel" placeholder="Phone Number" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+      <input type="date" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
+      <textarea placeholder="Your Health Concern" rows="4" class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
+      <button type="submit" class="w-full bg-green-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-green-800 transition">Send on WhatsApp</button>
+    </form>
   </div>
-  <p class="text-center mt-6 text-lg">Your Clinic Address, Kanpur, UP | 📞 +91 94158 08611</p>
 </section>
 
-<!-- FOOTER + Back to Top -->
-<footer class="bg-green-900 dark:bg-black text-white py-12 text-center">
-  <p class="text-lg font-semibold">📞 +91 94158 08611</p>
-  <p class="mt-2">© 2026 Dr. Anand Singh</p>
-  <p class="text-sm mt-2">Website by Deepak Sisodiya</p>
+<!-- Footer -->
+<footer class="bg-green-900 text-white py-16 text-center">
+  <p class="text-2xl font-bold">📞 +91 94158 08611</p>
+  <p class="mt-4 text-lg">© 2026 Dr. Anand Singh | Designed by Deepak Sisodiya</p>
 </footer>
 
-<a href="#" class="fixed bottom-20 right-6 bg-green-600 text-white p-3 rounded-full shadow-lg hover:bg-green-700 transition hidden" id="backToTop">
-  <i class="fas fa-arrow-up"></i>
-</a>
-
-<!-- Floating WhatsApp (already there) -->
-<a href="https://wa.me/919415808611" class="fixed bottom-6 right-6 bg-green-600 text-white p-4 rounded-full shadow-lg text-2xl hover:scale-110 transition">
+<!-- Floating WhatsApp -->
+<a href="https://wa.me/919415808611" class="fixed bottom-8 right-8 bg-green-600 text-white p-5 rounded-full shadow-2xl text-4xl hover:scale-110 transition z-50">
   <i class="fab fa-whatsapp"></i>
 </a>
 
 <script>
-// Fade-in
-const observer = new IntersectionObserver(entries => {
+// Hamburger Menu
+document.getElementById("menuBtn").addEventListener("click", () => {
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+});
+
+// Form to WhatsApp
+document.getElementById("bookForm").addEventListener("submit", (e) => {
+  e.preventDefault();
+  const name = e.target[0].value;
+  const phone = e.target[1].value;
+  const date = e.target[2].value;
+  const concern = e.target[3].value;
+  const msg = `*Appointment Request*%0AName: ${name}%0APhone: ${phone}%0ADate: ${date}%0AConcern: ${concern}`;
+  window.open(`https://wa.me/919415808611?text=${msg}`, "_blank");
+  e.target.reset();
+});
+
+// Fade-in on scroll
+const observer = new IntersectionObserver((entries) => {
   entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("show"); });
 });
 document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
+</script>
 
-// Dark Mode
-const toggle = document.getElementById("darkModeToggle");
-toggle.addEventListener("click", () => {
-  document.documentElement.classList.toggle("dark");
-  toggle.innerHTML = document.documentElement.classList.contains("dark") ? '<i class="fas fa-sun text-xl"></i>' : '<i class="fas fa-moon text-xl"></i>';
-});
-
-// Counter Animation
-const counters = document.querySelectorAll('.counter');
-const speed = 200;
-counters.forEach(counter => {
-  const updateCount = () => {
-    const target = +counter.getAttribute('data-count');
-    const count = +counter.innerText;
-    const inc = target / speed;
-    if (count < tar
+</body>
+</html>   </html>
