@@ -1,119 +1,159 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Anand Singh | Advanced Homeopathy Portal</title>
-    <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@200;400;700;800&display=swap');
-        :root { --accent: #00d2ff; --bg: #050505; }
-        body { font-family: 'Plus Jakarta Sans', sans-serif; background-color: var(--bg); color: white; }
-        
-        /* Premium Background Animation */
-        .mesh-bg { position: fixed; top: 0; left: 0; width: 100%; height: 100%; z-index: -1; overflow: hidden; }
-        .mesh-circle { position: absolute; border-radius: 50%; filter: blur(120px); opacity: 0.4; animation: drift 20s infinite alternate; }
-        @keyframes drift { from { transform: translate(-10%, -10%) scale(1); } to { transform: translate(30%, 30%) scale(1.5); } }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Dr. Anand Singh | Advanced Homeopathy</title>
+<script src="https://cdn.tailwindcss.com"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-        /* Glassmorphism */
-        .glass-panel { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(25px); border: 1px solid rgba(255, 255, 255, 0.08); border-radius: 40px; }
-        .premium-card:hover { transform: translateY(-15px) scale(1.02); border-color: var(--accent); box-shadow: 0 20px 50px rgba(0, 210, 255, 0.2); transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1); }
-        
-        /* Typography */
-        .hero-title { font-size: clamp(3rem, 10vw, 8rem); line-height: 0.9; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #fff 0%, #777 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-    </style>
+<style>
+body{font-family:'Inter',sans-serif;background:#f8fafc;color:#0f172a}
+.sidebar{width:260px}
+.glass{background:rgba(255,255,255,0.7);backdrop-filter:blur(10px)}
+.card:hover{transform:translateY(-6px);transition:.3s}
+</style>
 </head>
-<body class="overflow-x-hidden">
 
-    <div class="mesh-bg">
-        <div class="mesh-circle w-[600px] h-[600px] bg-blue-600 top-[-200px] left-[-200px]"></div>
-        <div class="mesh-circle w-[500px] h-[500px] bg-emerald-500 bottom-[-100px] right-[-100px]" style="animation-delay: -5s;"></div>
+<body class="flex">
+
+<!-- SIDEBAR -->
+<aside class="sidebar fixed h-full bg-white border-r border-gray-200 p-6">
+  <h1 class="text-2xl font-bold text-emerald-600 mb-10">Dr. Anand Singh</h1>
+  <nav class="space-y-4 font-semibold text-gray-600">
+    <a href="#home" class="block hover:text-emerald-600">Home</a>
+    <a href="#about" class="block hover:text-emerald-600">About</a>
+    <a href="#treatments" class="block hover:text-emerald-600">Treatments</a>
+    <a href="#research" class="block hover:text-emerald-600">Research</a>
+    <a href="#reviews" class="block hover:text-emerald-600">Reviews</a>
+    <a href="#book" class="block hover:text-emerald-600">Book Appointment</a>
+  </nav>
+</aside>
+
+<!-- MAIN CONTENT -->
+<main class="ml-[260px] w-full">
+
+<!-- HERO -->
+<section id="home" class="min-h-screen flex items-center px-16 bg-white">
+  <div>
+    <h1 class="text-5xl font-bold mb-6">
+      Advanced Homeopathic Care<br>
+      <span class="text-emerald-600">Trusted for 20+ Years</span>
+    </h1>
+    <p class="text-gray-600 max-w-xl mb-8">
+      Specializing in classical and modern homeopathy with a research-based approach to chronic disease management.
+    </p>
+    <a href="#book" class="bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold">
+      Book Consultation
+    </a>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about" class="py-20 px-16 bg-gray-50">
+  <h2 class="text-3xl font-bold mb-10">About Dr. Anand Singh</h2>
+  <p class="max-w-3xl text-gray-600 leading-relaxed">
+    With over two decades of clinical experience, Dr. Anand Singh specializes in constitutional prescribing,
+    chronic disease management, and integrative homeopathic care. His approach combines classical principles
+    with modern diagnostic insights to ensure safe, long-lasting healing.
+  </p>
+</section>
+
+<!-- TREATMENTS -->
+<section id="treatments" class="py-20 px-16">
+  <h2 class="text-3xl font-bold mb-12">Specialized Treatments</h2>
+  <div class="grid md:grid-cols-3 gap-8">
+    <div class="p-6 bg-white rounded-xl shadow card">
+      <h3 class="font-semibold text-lg mb-2">Skin Disorders</h3>
+      <p class="text-gray-600 text-sm">Eczema, psoriasis, acne & chronic skin conditions.</p>
     </div>
-
-    <div class="fixed top-32 right-[-40px] rotate-90 z-50 pointer-events-none">
-        <span class="bg-blue-600/20 border border-blue-500/30 px-6 py-2 rounded-full text-[10px] font-bold tracking-[0.4em] uppercase">ISO 9001:2026 CERTIFIED</span>
+    <div class="p-6 bg-white rounded-xl shadow card">
+      <h3 class="font-semibold text-lg mb-2">Respiratory Diseases</h3>
+      <p class="text-gray-600 text-sm">Asthma, allergies, chronic sinusitis.</p>
     </div>
+    <div class="p-6 bg-white rounded-xl shadow card">
+      <h3 class="font-semibold text-lg mb-2">Neurological Issues</h3>
+      <p class="text-gray-600 text-sm">Migraines, anxiety, sleep disorders.</p>
+    </div>
+  </div>
+</section>
 
-    <nav class="p-8 flex justify-between items-center max-w-[1400px] mx-auto sticky top-0 z-[100] glass-panel rounded-none border-t-0 border-x-0">
-        <div class="flex items-center gap-4">
-            <div class="w-12 h-12 bg-white rounded-2xl rotate-45 flex items-center justify-center border-2 border-blue-500 shadow-[0_0_20px_rgba(0,210,255,0.5)]">
-                <i class="fas fa-plus text-black -rotate-45 text-xl"></i>
-            </div>
-            <div class="leading-none">
-                <h1 class="text-xl font-bold tracking-tighter uppercase">Dr. Anand Singh</h1>
-                <p class="text-[8px] tracking-[0.3em] text-blue-400 font-bold">PREMIUM HOMEOPATHY</p>
-            </div>
-        </div>
-        <a href="#book" class="hidden md:block px-8 py-3 bg-white text-black rounded-full font-bold text-xs tracking-widest hover:invert transition-all">BOOK THE EXPERIENCE</a>
-    </nav>
+<!-- RESEARCH -->
+<section id="research" class="py-20 px-16 bg-gray-50">
+  <h2 class="text-3xl font-bold mb-12">Clinical Research</h2>
+  <div class="space-y-6">
+    <div class="p-6 bg-white rounded-xl shadow">
+      <h3 class="font-semibold">Asthma Constitutional Study</h3>
+      <p class="text-gray-600 text-sm">Long-term improvement in chronic asthma cases using individualized remedies.</p>
+    </div>
+    <div class="p-6 bg-white rounded-xl shadow">
+      <h3 class="font-semibold">Psoriasis Case Documentation</h3>
+      <p class="text-gray-600 text-sm">Steroid-free remission through homeopathic treatment.</p>
+    </div>
+  </div>
+</section>
 
-    <section class="min-h-screen flex flex-col justify-center items-center text-center px-6 pt-20">
-        <div class="mb-10 px-6 py-2 glass-panel rounded-full text-[10px] font-bold tracking-widest text-blue-400 border-blue-500/20">SCIENTIFICALLY PROVEN • NATURALLY CRAFTED</div>
-        <h1 class="hero-title mb-10 uppercase">Defining<br>The Future<br>Of Health.</h1>
-        <p class="max-w-3xl text-slate-400 text-lg md:text-2xl font-light mb-16 leading-relaxed">Experience medical excellence with Dr. Anand Singh. We don't just treat symptoms; we architect wellness through genetic-level homeopathic precision.</p>
-        
-        <div class="flex flex-col md:flex-row gap-8 w-full max-w-xl">
-            <a href="https://wa.me/919415808611" class="flex-1 bg-blue-600 p-6 rounded-3xl font-extrabold text-xl shadow-[0_20px_40px_rgba(37,99,235,0.4)] hover:bg-blue-500 transition-all">START CONSULTATION</a>
-            <a href="#book" class="flex-1 glass-panel p-6 rounded-3xl font-extrabold text-xl hover:bg-white/10 transition-all border-white/20">RESERVE SLOT</a>
-        </div>
-    </section>
+<!-- REVIEWS -->
+<section id="reviews" class="py-20 px-16">
+  <h2 class="text-3xl font-bold mb-12">Patient Reviews</h2>
 
-    <section class="max-w-[1400px] mx-auto px-6 py-40 grid grid-cols-1 md:grid-cols-3 gap-12">
-        <div class="glass-panel premium-card p-12 relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-bold text-white/[0.03] pointer-events-none">01</div>
-            <i class="fas fa-microscope text-5xl text-blue-500 mb-12"></i>
-            <h3 class="text-3xl font-bold mb-6">Deep Diagnosis</h3>
-            <p class="text-slate-400 text-lg">Harnessing advanced digital repertories to uncover the root cause of chronic illnesses.</p>
-        </div>
-        <div class="glass-panel premium-card p-12 relative overflow-hidden group border-blue-500/30">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-bold text-white/[0.03] pointer-events-none">02</div>
-            <i class="fas fa-dna text-5xl text-emerald-500 mb-12"></i>
-            <h3 class="text-3xl font-bold mb-6">Genetic Mapping</h3>
-            <p class="text-slate-400 text-lg">Constitutional treatment designed for your unique DNA and biological blueprint.</p>
-        </div>
-        <div class="glass-panel premium-card p-12 relative overflow-hidden group">
-            <div class="absolute top-0 right-0 p-8 text-8xl font-bold text-white/[0.03] pointer-events-none">03</div>
-            <i class="fas fa-infinity text-5xl text-purple-500 mb-12"></i>
-            <h3 class="text-3xl font-bold mb-6">Cure Finality</h3>
-            <p class="text-slate-400 text-lg">Specialized care for Asthma, Skin, and Neurological issues with 0% side effects.</p>
-        </div>
-    </section>
+  <div class="grid md:grid-cols-3 gap-8 mb-10">
+    <div class="p-6 bg-white rounded-xl shadow">
+      <p>"My asthma improved drastically within months."</p>
+      <span class="text-emerald-600 text-sm">— Neha Sharma</span>
+    </div>
+    <div class="p-6 bg-white rounded-xl shadow">
+      <p>"Best doctor for chronic skin conditions."</p>
+      <span class="text-emerald-600 text-sm">— Ravi Kumar</span>
+    </div>
+    <div class="p-6 bg-white rounded-xl shadow">
+      <p>"Professional, caring and effective treatment."</p>
+      <span class="text-emerald-600 text-sm">— Amit Verma</span>
+    </div>
+  </div>
 
-    <section id="book" class="max-w-5xl mx-auto px-6 py-40">
-        <div class="glass-panel p-16 relative border-2 border-blue-500/20">
-            <h2 class="text-5xl font-bold mb-4 text-center">Ready for Transformation?</h2>
-            <p class="text-slate-400 text-center mb-16 text-xl">Fill the digital intake form to book your priority slot.</p>
-            <form onsubmit="sendWA(event)" class="grid grid-cols-1 md:grid-cols-2 gap-8">
-                <input type="text" id="p_name" placeholder="PATIENT NAME" required class="bg-transparent border-b-2 border-white/10 p-6 focus:border-blue-500 outline-none text-xl font-bold transition-all">
-                <input type="text" id="p_issue" placeholder="MEDICAL ISSUE" required class="bg-transparent border-b-2 border-white/10 p-6 focus:border-blue-500 outline-none text-xl font-bold transition-all">
-                <input type="date" id="p_date" required class="bg-transparent border-b-2 border-white/10 p-6 focus:border-blue-500 outline-none text-xl font-bold transition-all invert">
-                <button type="submit" class="md:col-span-2 bg-white text-black p-8 rounded-full font-black text-2xl tracking-tighter hover:bg-blue-500 hover:text-white transition-all">CONFIRM APPOINTMENT</button>
-            </form>
-        </div>
-    </section>
+  <!-- Add Review -->
+  <div class="max-w-xl">
+    <input id="reviewName" placeholder="Your Name" class="w-full p-3 mb-3 border rounded">
+    <textarea id="reviewText" placeholder="Your Review" class="w-full p-3 mb-3 border rounded"></textarea>
+    <button onclick="addReview()" class="bg-emerald-600 text-white px-6 py-2 rounded-full">Submit Review</button>
+    <div id="reviewList" class="mt-4 text-gray-700"></div>
+  </div>
+</section>
 
-    <footer class="p-20 border-t border-white/5 text-center">
-        <div class="mb-10 flex justify-center gap-6 text-slate-500 text-2xl">
-            <i class="fab fa-instagram hover:text-white cursor-pointer"></i>
-            <i class="fab fa-facebook-f hover:text-white cursor-pointer"></i>
-            <i class="fab fa-linkedin-in hover:text-white cursor-pointer"></i>
-        </div>
-        <p class="text-slate-600 text-xs tracking-[0.5em] mb-4">DR. ANAND SINGH CLINIC © 2026 • ALL RIGHTS RESERVED</p>
-        <div class="text-[10px] text-slate-400 font-bold uppercase">
-            Master-Design by <span class="text-blue-500">Deepak Sisodiya</span>
-        </div>
-    </footer>
+<!-- BOOKING -->
+<section id="book" class="py-20 px-16 bg-gray-50">
+  <h2 class="text-3xl font-bold mb-10">Book Appointment</h2>
+  <form onsubmit="sendWA(event)" class="max-w-xl space-y-4">
+    <input id="name" placeholder="Patient Name" required class="w-full p-3 border rounded">
+    <input id="issue" placeholder="Medical Issue" required class="w-full p-3 border rounded">
+    <button class="bg-emerald-600 text-white px-8 py-3 rounded-full font-semibold">
+      Confirm via WhatsApp
+    </button>
+  </form>
+</section>
 
-    <script>
-        function sendWA(e) {
-            e.preventDefault();
-            const n = document.getElementById('p_name').value;
-            const i = document.getElementById('p_issue').value;
-            const d = document.getElementById('p_date').value;
-            const url = `https://wa.me/919415808611?text=PREMIUM%20CONSULTATION%20REQUEST%0A%0A*Patient:*%20${n}%0A*Issue:*%20${i}%0A*Date:*%20${d}`;
-            window.open(url, '_blank');
-        }
-    </script>
+<footer class="p-6 text-center text-gray-500 text-sm">
+  © 2026 Dr. Anand Singh Clinic • All Rights Reserved
+</footer>
+
+</main>
+
+<script>
+function sendWA(e){
+  e.preventDefault();
+  const n=document.getElementById("name").value;
+  const i=document.getElementById("issue").value;
+  window.open(`https://wa.me/919415808611?text=Appointment%0AName:${n}%0AIssue:${i}`);
+}
+
+function addReview(){
+  const name=document.getElementById("reviewName").value;
+  const text=document.getElementById("reviewText").value;
+  if(!name||!text) return;
+  document.getElementById("reviewList").innerHTML += `<p class="mt-2">"${text}" — <span class="text-emerald-600">${name}</span></p>`;
+}
+</script>
+
 </body>
-</html>
+</html>/</html>
