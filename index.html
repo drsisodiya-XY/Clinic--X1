@@ -4,7 +4,7 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Dr. Anand Singh | Premium Homeopathic Care</title>
-<script src="https://cdn.tailwindcss.com"></script>
+script src="https://cdn.tailwindcss.com"></script>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
 <style>
 :root {
@@ -193,33 +193,4 @@ counters.forEach(counter => {
     const target = +counter.getAttribute('data-count');
     const count = +counter.innerText;
     const inc = target / speed;
-    if (count < target) {
-      counter.innerText = Math.ceil(count + inc);
-      setTimeout(updateCount, 1);
-    } else counter.innerText = target + (target === 98 ? '%' : '+');
-  };
-  const observer = new IntersectionObserver(entries => { if (entries[0].isIntersecting) updateCount(); });
-  observer.observe(counter);
-});
-
-// Testimonial Slider (simple auto)
-let slideIndex = 0;
-function showSlides() {
-  const slides = document.querySelectorAll("#testimonialSlider > div > div");
-  if (slides.length > 0) {
-    slides.forEach(slide => slide.style.display = "none");
-    slideIndex++;
-    if (slideIndex > slides.length) slideIndex = 1;
-    slides[slideIndex-1].style.display = "block";
-  }
-}
-setInterval(showSlides, 5000); // Change every 5s
-
-// Back to Top
-window.addEventListener("scroll", () => {
-  document.getElementById("backToTop").classList.toggle("hidden", window.scrollY < 300);
-});
-</script>
-
-</body>
-</html>
+    if (count < tar
