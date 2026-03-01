@@ -1,262 +1,71 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Dr. Anand Singh | Advanced Clinical Homeopathy</title>
+    <title>Dr. Anand Singh | AI Integrated Clinic</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <script>
-        tailwind.config = {
-            darkMode: 'class',
-            theme: {
-                extend: {
-                    fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'], },
-                    colors: { medical: '#0284c7', medicalDark: '#0369a1', }
-                }
-            }
-        }
-    </script>
     <style>
-        body { font-family: 'Plus Jakarta Sans', sans-serif; }
-        /* Smooth Scroll Animations */
-        .reveal { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
-        .reveal.active { opacity: 1; transform: translateY(0); }
-        /* Medical Abstract Background */
-        .bg-pattern { background-image: radial-gradient(#0284c7 0.5px, transparent 0.5px); background-size: 24px 24px; opacity: 0.05; }
-        .dark .bg-pattern { background-image: radial-gradient(#38bdf8 0.5px, transparent 0.5px); opacity: 0.03; }
-        /* Glassmorphism */
-        .glass { background: rgba(255, 255, 255, 0.7); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); }
-        .dark .glass { background: rgba(15, 23, 42, 0.8); }
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;500;700&display=swap');
+        body { font-family: 'Space Grotesk', sans-serif; background-color: #050505; color: white; overflow-x: hidden; }
+        .blob { position: absolute; width: 500px; height: 500px; background: linear-gradient(180deg, rgba(2, 132, 199, 0.2) 0%, rgba(34, 197, 94, 0.1) 100%); filter: blur(80px); border-radius: 50%; z-index: -1; animation: move 20s infinite alternate; }
+        @keyframes move { from { transform: translate(-10%, -10%); } to { transform: translate(20%, 20%); } }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(15px); border: 1px solid rgba(255, 255, 255, 0.1); transition: all 0.4s ease; cursor: pointer; }
+        .glass-card:hover { transform: translateY(-10px); background: rgba(255, 255, 255, 0.07); border-color: #0284c7; box-shadow: 0 0 30px rgba(2, 132, 199, 0.2); }
+        .hero-text { background: linear-gradient(to right, #fff, #0284c7, #22c55e); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
     </style>
 </head>
-<body class="bg-slate-50 dark:bg-slate-950 text-slate-800 dark:text-slate-200 antialiased transition-colors duration-300">
+<body>
+    <div class="blob" style="top: -100px; left: -100px;"></div>
+    <div class="blob" style="bottom: -100px; right: -100px; animation-delay: -5s;"></div>
 
-    <a href="https://wa.me/919876543210?text=Hello Doctor, I want to book an appointment." target="_blank" class="fixed bottom-6 right-6 z-50 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:bg-green-600 hover:scale-110 transition-all duration-300 animate-bounce">
-        <i class="fab fa-whatsapp"></i>
-    </a>
-
-    <nav class="fixed w-full z-50 top-0 glass border-b border-slate-200 dark:border-slate-800 transition-colors">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between h-20 items-center">
-                <div class="flex items-center gap-3">
-                    <div class="w-12 h-12 rounded-xl bg-gradient-to-br from-medical to-cyan-500 flex items-center justify-center shadow-lg shadow-medical/30">
-                        <i class="fas fa-plus text-white text-xl"></i>
-                    </div>
-                    <div>
-                        <span class="font-extrabold text-xl md:text-2xl text-slate-900 dark:text-white tracking-tight">Dr. Anand Clinic</span><br>
-                        <span class="text-[10px] text-medical dark:text-sky-400 font-bold tracking-widest uppercase">Premium Homeopathy</span>
-                    </div>
-                </div>
-                <div class="hidden md:flex space-x-6 items-center font-semibold text-sm">
-                    <a href="#home" class="hover:text-medical transition">Home</a>
-                    <a href="#expertise" class="hover:text-medical transition">Specialities</a>
-                    <a href="#ai-check" class="text-sky-600 dark:text-sky-400 hover:text-medical transition"><i class="fas fa-robot mr-1"></i> AI Check</a>
-                    
-                    <button id="themeToggle" class="w-10 h-10 rounded-full bg-slate-200 dark:bg-slate-800 text-slate-700 dark:text-yellow-400 flex items-center justify-center hover:scale-110 transition-transform">
-                        <i class="fas fa-moon dark:hidden"></i>
-                        <i class="fas fa-sun hidden dark:inline"></i>
-                    </button>
-                    
-                    <a href="#ai-check" class="bg-slate-900 dark:bg-white text-white dark:text-slate-900 px-6 py-2.5 rounded-full hover:shadow-xl hover:-translate-y-1 transition-all">Book Consult</a>
-                </div>
+    <nav class="p-6 flex justify-between items-center max-w-7xl mx-auto relative z-10">
+        <div class="flex items-center gap-2">
+            <div class="w-10 h-10 bg-sky-600 rounded-full flex items-center justify-center shadow-[0_0_20px_rgba(2,132,199,0.5)]">
+                <i class="fas fa-plus text-white"></i>
             </div>
+            <span class="text-xl font-bold tracking-tighter uppercase">Dr. Anand <span class="text-sky-500 underline decoration-green-500 underline-offset-4">Clinic</span></span>
         </div>
+        <a href="https://wa.me/919415808611" class="bg-white text-black px-6 py-2 rounded-full font-bold hover:scale-105 transition-all text-sm">BOOK APPOINTMENT</a>
     </nav>
 
-    <section id="home" class="relative min-h-screen flex items-center pt-20 overflow-hidden">
-        <div class="absolute inset-0 bg-pattern z-0"></div>
-        <div class="absolute top-20 left-10 w-72 h-72 bg-medical rounded-full mix-blend-multiply filter blur-[100px] opacity-20 dark:opacity-10"></div>
-        <div class="absolute bottom-20 right-10 w-72 h-72 bg-cyan-400 rounded-full mix-blend-multiply filter blur-[100px] opacity-20 dark:opacity-10"></div>
-
-        <div class="max-w-7xl mx-auto px-4 relative z-10 w-full reveal">
-            <div class="text-center max-w-4xl mx-auto">
-                <div class="inline-flex items-center gap-2 bg-white dark:bg-slate-800 border border-slate-200 dark:border-slate-700 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-8 shadow-sm">
-                    <span class="w-2.5 h-2.5 rounded-full bg-green-500 animate-pulse"></span>
-                    Accepting New Patients
-                </div>
-                <h1 class="text-5xl md:text-7xl font-extrabold text-slate-900 dark:text-white leading-[1.1] mb-6 tracking-tight">
-                    Healing with <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical to-cyan-400">Precision.</span><br>Curing with Care.
-                </h1>
-                <p class="text-lg md:text-xl text-slate-600 dark:text-slate-400 mb-10 leading-relaxed font-medium">
-                    Experience world-class clinical homeopathy integrated with modern AI diagnostics for chronic and complex diseases.
-                </p>
-                <div class="flex flex-col sm:flex-row gap-4 justify-center">
-                    <a href="#ai-check" class="bg-gradient-to-r from-medical to-medicalDark text-white px-8 py-4 rounded-full font-bold text-lg hover:shadow-2xl hover:shadow-medical/40 hover:-translate-y-1 transition-all flex items-center justify-center">
-                        Consult Now <i class="fas fa-arrow-right ml-2"></i>
-                    </a>
-                    <a href="#expertise" class="bg-white dark:bg-slate-900 text-slate-900 dark:text-white border-2 border-slate-200 dark:border-slate-800 px-8 py-4 rounded-full font-bold text-lg hover:border-medical transition-all flex items-center justify-center">
-                        Our Specialities
-                    </a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="py-12 bg-white dark:bg-slate-900 border-y border-slate-100 dark:border-slate-800 reveal">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="grid grid-cols-2 md:grid-cols-4 gap-8 text-center">
-                <div>
-                    <h3 class="text-4xl font-extrabold text-medical mb-2">15+</h3>
-                    <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Years Experience</p>
-                </div>
-                <div>
-                    <h3 class="text-4xl font-extrabold text-medical mb-2">10k+</h3>
-                    <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Patients Cured</p>
-                </div>
-                <div>
-                    <h3 class="text-4xl font-extrabold text-medical mb-2">100%</h3>
-                    <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">Safe & Natural</p>
-                </div>
-                <div>
-                    <h3 class="text-4xl font-extrabold text-medical mb-2">24/7</h3>
-                    <p class="text-sm font-bold text-slate-500 uppercase tracking-wider">AI Support</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="expertise" class="py-24 relative reveal">
-        <div class="max-w-7xl mx-auto px-4">
-            <div class="text-center mb-16">
-                <h2 class="text-4xl md:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">Clinical Mastery</h2>
-                <div class="w-20 h-1.5 bg-gradient-to-r from-medical to-cyan-400 mx-auto rounded-full"></div>
-            </div>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-700 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-blue-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-medical text-3xl group-hover:scale-110 transition-transform">
-                        <i class="fas fa-lungs-virus"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Respiratory & Asthma</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Deep miasmatic treatment for chronic cough, allergies, and breathing difficulties without inhalers.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-700 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-blue-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-medical text-3xl group-hover:scale-110 transition-transform">
-                        <i class="fas fa-brain"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Neuro & Psychiatry</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Gentle healing for Anxiety, Depression, Migraine, and Insomnia using constitutional remedies.</p>
-                </div>
-                <div class="bg-white dark:bg-slate-800 p-8 rounded-3xl shadow-lg border border-slate-100 dark:border-slate-700 hover:-translate-y-2 hover:shadow-2xl transition-all duration-300 group">
-                    <div class="w-16 h-16 bg-blue-50 dark:bg-slate-900 rounded-2xl flex items-center justify-center mb-6 text-medical text-3xl group-hover:scale-110 transition-transform">
-                        <i class="fas fa-female"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold text-slate-900 dark:text-white mb-3">Women's Health</h3>
-                    <p class="text-slate-600 dark:text-slate-400 leading-relaxed mb-4">Effective hormonal balancing for PCOS, PCOD, Thyroid, and menstrual irregularities naturally.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section id="ai-check" class="py-24 bg-slate-900 dark:bg-black text-white relative overflow-hidden reveal">
-        <div class="absolute top-0 right-0 w-1/2 h-full bg-gradient-to-l from-medical/20 to-transparent"></div>
+    <section class="min-h-[85vh] flex flex-col justify-center items-center text-center px-4 relative z-10">
+        <div class="mb-4 px-4 py-1 border border-sky-500/30 rounded-full text-[10px] text-sky-400 font-bold tracking-[0.2em] uppercase bg-sky-500/10">Homeopathy 2.0 • AI Diagnostic Ready</div>
+        <h1 class="text-6xl md:text-9xl font-bold hero-text mb-6 leading-tight">Advanced<br>Healing.</h1>
+        <p class="max-w-xl text-slate-400 text-lg md:text-xl mb-12 leading-relaxed">प्रोफ़ेसर आनंद सिंह: होम्योपैथी के साथ अब भविष्य की तकनीक। सटीक निदान और सुरक्षित उपचार।</p>
         
-        <div class="max-w-6xl mx-auto px-4 relative z-10">
-            <div class="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
-                <div>
-                    <div class="inline-flex items-center gap-2 bg-medical/20 border border-medical/40 text-sky-400 px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest mb-6">
-                        <i class="fas fa-microchip"></i> Next-Gen Tech
-                    </div>
-                    <h2 class="text-4xl md:text-5xl font-extrabold mb-6 leading-tight">AI Pre-Consultation <br><span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-cyan-300">Analyzer System</span></h2>
-                    <p class="text-slate-400 text-lg mb-8 leading-relaxed">Save time at the clinic. Enter your symptoms below, and our smart portal will structure your medical case and send it directly to the Doctor's encrypted WhatsApp portal.</p>
-                    
-                    <ul class="space-y-4 text-slate-300">
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3 text-xl"></i> Instant Case Generation</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3 text-xl"></i> Priority Appointment Slot</li>
-                        <li class="flex items-center"><i class="fas fa-check-circle text-green-400 mr-3 text-xl"></i> Direct Doctor Review</li>
-                    </ul>
-                </div>
-                
-                <div class="bg-slate-800/80 backdrop-blur-xl p-8 md:p-10 rounded-3xl border border-slate-700 shadow-[0_0_40px_rgba(2,132,199,0.2)]">
-                    <form onsubmit="processAI(event)">
-                        <div class="mb-5">
-                            <label class="block text-sky-400 text-xs font-bold mb-2 uppercase tracking-wider">Patient Name</label>
-                            <input type="text" id="pName" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-medical focus:ring-1 focus:ring-medical transition-all" placeholder="Enter full name" required>
-                        </div>
-                        <div class="mb-6">
-                            <label class="block text-sky-400 text-xs font-bold mb-2 uppercase tracking-wider">Detail Your Symptoms</label>
-                            <textarea id="pSymptoms" rows="4" class="w-full bg-slate-900 border border-slate-700 rounded-xl px-4 py-4 text-white focus:outline-none focus:border-medical focus:ring-1 focus:ring-medical transition-all placeholder-slate-600" placeholder="E.g., I have a sharp pain in my lower back since 3 weeks..." required></textarea>
-                        </div>
-                        
-                        <button type="submit" class="w-full bg-gradient-to-r from-medical to-cyan-500 text-white font-bold py-4 rounded-xl hover:from-medicalDark hover:to-medical transition-all flex justify-center items-center text-lg shadow-lg group">
-                            <i class="fas fa-paper-plane mr-2 group-hover:translate-x-1 transition-transform"></i> Send to Doctor
-                        </button>
-                    </form>
-                </div>
-            </div>
+        <div class="flex flex-col md:flex-row gap-6">
+            <a href="https://wa.me/919415808611" class="bg-sky-600 text-white px-10 py-5 rounded-2xl font-bold text-lg shadow-[0_0_40px_rgba(2,132,199,0.4)] hover:bg-sky-500 hover:scale-105 transition-all flex items-center justify-center gap-3">
+                <i class="fab fa-whatsapp text-2xl"></i> WHATSAPP CONSULT
+            </a>
         </div>
     </section>
 
-    <footer class="bg-white dark:bg-slate-950 text-slate-600 dark:text-slate-400 py-12 border-t border-slate-200 dark:border-slate-800 text-center transition-colors">
-        <div class="max-w-7xl mx-auto px-4 flex flex-col items-center">
-            <div class="w-12 h-12 bg-medical rounded-xl flex items-center justify-center text-white text-2xl mb-6 shadow-md">
-                <i class="fas fa-leaf"></i>
-            </div>
-            <h3 class="text-xl font-bold text-slate-900 dark:text-white mb-2">Dr. Anand Singh Clinic</h3>
-            <p class="mb-6 text-sm">Advanced Classical Homeopathy & Research Center</p>
-            
-            <div class="flex gap-4 mb-8">
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-medical hover:text-white transition-all"><i class="fab fa-facebook-f"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-medical hover:text-white transition-all"><i class="fab fa-instagram"></i></a>
-                <a href="#" class="w-10 h-10 rounded-full bg-slate-100 dark:bg-slate-800 flex items-center justify-center hover:bg-medical hover:text-white transition-all"><i class="fab fa-linkedin-in"></i></a>
-            </div>
+    <section class="max-w-7xl mx-auto px-6 py-32 grid grid-cols-1 md:grid-cols-3 gap-10 relative z-10">
+        <div class="glass-card p-12 rounded-[50px]">
+            <div class="w-16 h-16 bg-sky-500/20 rounded-2xl flex items-center justify-center mb-8"><i class="fas fa-shield-virus text-3xl text-sky-400"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Chronic Care</h3>
+            <p class="text-slate-400 leading-relaxed">Specialized in Asthma, Skin Allergy, and Neurological recovery with natural precision.</p>
+        </div>
+        <div class="glass-card p-12 rounded-[50px]">
+            <div class="w-16 h-16 bg-green-500/20 rounded-2xl flex items-center justify-center mb-8"><i class="fas fa-microscope text-3xl text-green-400"></i></div>
+            <h3 class="text-2xl font-bold mb-4">Digital Analysis</h3>
+            <p class="text-slate-400 leading-relaxed">Integrated AI case-taking for zero-error diagnosis of complex health issues.</p>
+        </div>
+        <div class="glass-card p-12 rounded-[50px]">
+            <div class="w-16 h-16 bg-purple-500/20 rounded-2xl flex items-center justify-center mb-8"><i class="fas fa-leaf text-3xl text-purple-400"></i></div>
+            <h3 class="text-2xl font-bold mb-4">100% Organic</h3>
+            <p class="text-slate-400 leading-relaxed">No side effects. Constitutional remedies tailored to your unique genetic blueprint.</p>
+        </div>
+    </section>
 
-            <p class="text-xs">&copy; 2026 Dr. Anand Singh. All Rights Reserved.</p>
-            
-            <div class="mt-6 pt-6 border-t border-slate-200 dark:border-slate-800 w-full max-w-xs">
-                <p class="text-xs tracking-widest font-semibold text-slate-500">
-                    DESIGNED BY <br>
-                    <span class="text-transparent bg-clip-text bg-gradient-to-r from-medical to-cyan-400 text-sm font-extrabold uppercase mt-1 inline-block">Deepak Sisodiya</span>
-                </p>
-            </div>
+    <footer class="text-center py-24 border-t border-white/5 mt-20 relative z-10 bg-black/50">
+        <p class="text-slate-600 text-xs tracking-[0.3em] uppercase mb-8">Dr. Anand Singh Clinic © 2026</p>
+        <div class="inline-block p-1 px-4 border border-slate-800 rounded-full">
+            <span class="text-slate-500 text-[10px] font-bold uppercase tracking-widest">Designed with Mastery by</span><br>
+            <span class="text-transparent bg-clip-text bg-gradient-to-r from-sky-400 to-green-400 text-xl font-bold uppercase mt-1 inline-block">Deepak Sisodiya</span>
         </div>
     </footer>
-
-    <script>
-        // 1. Dark Mode Logic
-        const themeToggle = document.getElementById('themeToggle');
-        const html = document.querySelector('html');
-        if (localStorage.getItem('theme') === 'dark') { html.classList.add('dark'); }
-        
-        themeToggle.addEventListener('click', () => {
-            html.classList.toggle('dark');
-            if(html.classList.contains('dark')) {
-                localStorage.setItem('theme', 'dark');
-            } else {
-                localStorage.setItem('theme', 'light');
-            }
-        });
-
-        // 2. Scroll Animation Logic (Intersection Observer)
-        function reveal() {
-            var reveals = document.querySelectorAll(".reveal");
-            for (var i = 0; i < reveals.length; i++) {
-                var windowHeight = window.innerHeight;
-                var elementTop = reveals[i].getBoundingClientRect().top;
-                var elementVisible = 100;
-                if (elementTop < windowHeight - elementVisible) {
-                    reveals[i].classList.add("active");
-                }
-            }
-        }
-        window.addEventListener("scroll", reveal);
-        reveal(); // Trigger on load
-
-        // 3. AI Form to WhatsApp Logic
-        function processAI(e) {
-            e.preventDefault();
-            const name = document.getElementById('pName').value;
-            const symptoms = document.getElementById('pSymptoms').value;
-            const doctorPhone = "919876543210"; // CHANGE THIS TO PROFESSOR'S NUMBER LATER
-            
-            // Format message for WhatsApp
-            const waMessage = `🤖 *WEBSITE AI PORTAL* 🤖%0A%0A*Patient Name:* ${name}%0A*Reported Symptoms:* ${symptoms}%0A%0A_This case was generated via the website's smart portal._`;
-            
-            // Open WhatsApp in new tab
-            window.open(`https://wa.me/${doctorPhone}?text=${waMessage}`, '_blank');
-        }
-    </script>
 </body>
 </html>
