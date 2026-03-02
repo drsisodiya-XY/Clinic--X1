@@ -1,187 +1,48 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Dr. Anand Singh | Advanced Homeopathy</title>
     <script src="https://cdn.tailwindcss.com"></script>
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/framer-motion/11.0.8/framer-motion.js">
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap');
-        
-        body {
-            font-family: 'Plus Jakarta Sans', sans-serif;
-            background-color: #030303; /* Deep Apple Black */
-            color: #ffffff;
-            overflow-x: hidden;
-        }
-
-        /* Animated Mesh Background */
-        .mesh-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden; background: #030303; }
-        .blob1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(0,255,170,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(80px); animation: float 15s infinite alternate ease-in-out; }
-        .blob2 { position: absolute; bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(0,115,255,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(100px); animation: float 20s infinite alternate-reverse ease-in-out; }
-        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(10%, 15%) scale(1.2); } }
-
-        /* Ultra Premium Glassmorphism */
-        .glass-panel {
-            background: rgba(255, 255, 255, 0.02);
-            backdrop-filter: blur(20px);
-            -webkit-backdrop-filter: blur(20px);
-            border: 1px solid rgba(255, 255, 255, 0.05);
-            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
-        }
-
-        /* 3D Hover Effects for Cards */
-        .service-card { transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
-        .service-card:hover { 
-            transform: translateY(-10px) scale(1.02); 
-            border-color: rgba(0, 255, 170, 0.3);
-            box-shadow: 0 20px 40px rgba(0, 255, 170, 0.1);
-            background: rgba(255, 255, 255, 0.04);
-        }
-
-        /* Glowing Text */
-        .text-glow { text-shadow: 0 0 20px rgba(0, 255, 170, 0.3); }
-        .gradient-text { background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-        .accent-gradient { background: linear-gradient(135deg, #00ffaa 0%, #0073ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
-
-        /* Scroll Animation Classes */
-        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
-        .reveal.active { opacity: 1; transform: translateY(0); }
+        body { background: #020617; color: white; scroll-behavior: smooth; }
+        .emerald-glow { text-shadow: 0 0 20px rgba(16, 185, 129, 0.5); }
+        .glass { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(10px); border: 1px solid rgba(255, 255, 255, 0.1); }
     </style>
 </head>
-<body class="antialiased selection:bg-emerald-500 selection:text-black">
-
-    <div class="mesh-bg">
-        <div class="blob1"></div>
-        <div class="blob2"></div>
-    </div>
-
-    <nav class="fixed w-full z-50 glass-panel border-b border-white/5 top-0 transition-all duration-300">
-        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
-            <div class="text-xl font-bold tracking-tighter">
-                DR. ANAND <span class="accent-gradient">SINGH</span>
-            </div>
-            <a href="#booking" class="bg-white/10 hover:bg-white text-white hover:text-black px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 border border-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
-                Book Slot
-            </a>
-        </div>
-    </nav>
-
-    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-6">
-        <div class="relative z-10 text-center max-w-5xl mx-auto reveal">
-            <div class="inline-block mb-6 px-4 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(0,255,170,0.2)]">
-                <i class="fas fa-dna mr-2"></i> Advanced Constitutional Homeopathy
-            </div>
-            
-            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.1]">
-                Cure The <br>
-                <span class="accent-gradient text-glow">Uncurable.</span>
-            </h1>
-            
-            <p class="text-lg md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
-                Experience medical excellence. We architect wellness through genetic-level precision, curing complex lifestyle diseases from the root without side effects.
-            </p>
-            
-            <div class="flex flex-col sm:flex-row justify-center gap-6">
-                <a href="#booking" class="bg-gradient-to-r from-emerald-500 to-emerald-400 text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(0,255,170,0.3)]">
-                    Start Treatment <i class="fas fa-arrow-right ml-2"></i>
-                </a>
-                <a href="#services" class="glass-panel text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors duration-300">
-                    Explore Science
-                </a>
-            </div>
-        </div>
-    </header>
-
-    <section id="services" class="py-32 px-6 relative z-10">
-        <div class="max-w-7xl mx-auto">
-            <h2 class="text-4xl md:text-6xl font-bold text-center mb-20 gradient-text reveal">Holistic Health Matrix</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 100ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-8 border border-emerald-500/30">
-                        <i class="fas fa-network-wired"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Comprehensive Chronic Care</h3>
-                    <p class="text-gray-400 leading-relaxed">Deep-rooted solutions for long-standing issues. We analyze your complete biological footprint to eliminate recurring diseases.</p>
-                </div>
-
-                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 200ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-8 border border-blue-500/30">
-                        <i class="fas fa-microscope"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Constitutional Genetic Healing</h3>
-                    <p class="text-gray-400 leading-relaxed">Medicines mapped directly to your unique DNA structure and psychological profile for permanent recovery.</p>
-                </div>
-
-                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 300ms;">
-                    <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-8 border border-purple-500/30">
-                        <i class="fas fa-shield-virus"></i>
-                    </div>
-                    <h3 class="text-2xl font-bold mb-4">Advanced Immunity Building</h3>
-                    <p class="text-gray-400 leading-relaxed">Fortify your body's natural defense systems to fight off severe autoimmune conditions naturally.</p>
-                </div>
-            </div>
+<body>
+    <section class="min-h-screen flex flex-col items-center justify-center text-center p-6">
+        <h1 class="text-5xl md:text-7xl font-bold emerald-glow mb-4">Cure The Uncurable</h1>
+        <p class="text-xl text-gray-400 mb-8 max-w-2xl">Advanced Homeopathic care for Chronic, Acute, and complex Lifestyle diseases with 25+ years of expertise.</p>
+        <div class="flex gap-4">
+            <a href="https://wa.me/919415808611?text=Hello%20Dr.%20Anand%20Singh,%20I%20want%20to%20book%20a%20premium%20consultation." class="bg-emerald-600 hover:bg-emerald-500 px-8 py-4 rounded-full font-bold transition">Book Appointment</a>
         </div>
     </section>
 
-    <section id="booking" class="py-32 px-6 relative z-10">
-        <div class="max-w-4xl mx-auto glass-panel p-10 md:p-16 rounded-[3rem] border border-emerald-500/20 reveal">
-            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Reserve Your Slot</h2>
-            <p class="text-center text-gray-400 mb-12">Fill the digital intake to begin your healing journey.</p>
-            
-            <form onsubmit="bookAppointment(event)" class="space-y-6">
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
-                    <input type="text" id="patientName" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
-                    <input type="tel" id="patientPhone" placeholder="Phone Number" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
-                </div>
-                <input type="text" id="patientIssue" placeholder="Briefly describe your medical condition" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
-                <button type="submit" class="w-full bg-white text-black font-bold text-xl py-5 rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-4">
-                    Confirm Consultation
-                </button>
-            </form>
+    <section class="py-20 px-6 glass">
+        <h2 class="text-3xl font-bold text-center mb-12">Expertise in All Chronic Diseases</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8 max-w-6xl mx-auto text-center">
+            <div class="p-8 border border-emerald-500/20 rounded-2xl">Skin & Allergy</div>
+            <div class="p-8 border border-emerald-500/20 rounded-2xl">Arthritis & Joint Pain</div>
+            <div class="p-8 border border-emerald-500/20 rounded-2xl">Diabetes & Lifestyle</div>
         </div>
     </section>
 
-    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
-        <a href="tel:+919415808611" class="w-14 h-14 bg-red-500/20 backdrop-blur-md border border-red-500/50 text-red-500 rounded-full flex items-center justify-center text-xl shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:scale-110 hover:bg-red-500 hover:text-white transition-all">
-            <i class="fas fa-phone"></i>
-        </a>
-        <a href="https://wa.me/919415808611?text=Hi,%20I%20would%20like%20to%20book%20a%20premium%20consultation%20with%20Dr.%20Anand%20Singh." target="_blank" class="w-14 h-14 bg-emerald-500 backdrop-blur-md text-black rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-110 hover:bg-white transition-all">
-            <i class="fab fa-whatsapp"></i>
-        </a>
+    <section class="py-20 text-center">
+        <h2 class="text-3xl font-bold mb-6">Patient Feedback & Ratings</h2>
+        <div class="text-emerald-400 text-4xl mb-4">★★★★★</div>
+        <p class="italic text-gray-400">"Excellent treatment for my chronic asthma!" - Happy Patient</p>
+    </section>
+
+    <div class="fixed bottom-6 right-6 flex flex-col gap-4">
+        <a href="https://wa.me/919415808611" class="bg-green-500 p-4 rounded-full shadow-lg shadow-green-500/50">WhatsApp</a>
+        <a href="tel:+919415808611" class="bg-red-600 p-4 rounded-full shadow-lg shadow-red-500/50 animate-pulse">Emergency Call</a>
     </div>
 
-    <footer class="py-12 border-t border-white/10 relative z-10 mt-20 text-center">
-        <p class="text-gray-500 text-sm tracking-widest uppercase mb-4">© 2026 Dr. Anand Singh Clinic</p>
-        <div class="inline-block px-6 py-2 glass-panel rounded-full text-xs font-semibold tracking-wider">
-            <span class="text-gray-400">Crafted by</span> <span class="text-emerald-400">Deepak Sisodiya</span>
-        </div>
+    <footer class="p-10 text-center border-t border-white/10">
+        <p class="text-gray-500">Master-Crafted by <span class="text-white font-serif">Deepak Sisodiya</span></p>
     </footer>
-
-    <script>
-        // Scroll Animation Observer (Simulates Framer Motion)
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add('active');
-                }
-            });
-        }, { threshold: 0.1 });
-
-        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
-
-        // Booking Form to WhatsApp Logic
-        function bookAppointment(e) {
-            e.preventDefault();
-            const name = document.getElementById('patientName').value;
-            const phone = document.getElementById('patientPhone').value;
-            const issue = document.getElementById('patientIssue').value;
-            
-            const message = `*PREMIUM CONSULTATION BOOKING*%0A%0A*Name:* ${name}%0A*Contact:* ${phone}%0A*Condition:* ${issue}`;
-            window.open(`https://wa.me/919415808611?text=${message}`, '_blank');
-        }
-    </script>
 </body>
 </html>
