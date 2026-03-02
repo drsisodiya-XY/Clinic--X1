@@ -1,192 +1,187 @@
 <!DOCTYPE html>
 <html lang="en" class="scroll-smooth">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Dr. Anand Singh | Premium Homeopathic Care</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-  <style>
-    body { font-family: 'Inter', sans-serif; }
-    .hero-bg { 
-      background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1559757148-5e995136c87b?ixlib=rb-4.0.3&auto=format&fit=crop&q=80&w=1974&q=80');
-      background-size: cover; background-position: center; 
-    }
-    .fade-in { opacity:0; transform:translateY(40px); transition:all 1s ease; }
-    .fade-in.show { opacity:1; transform:translateY(0); }
-    .card { transition: all 0.3s ease; }
-    .card:hover { transform: translateY(-10px); box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1); }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Anand Singh | Advanced Homeopathy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;500;700;800&display=swap');
+        
+        body {
+            font-family: 'Plus Jakarta Sans', sans-serif;
+            background-color: #030303; /* Deep Apple Black */
+            color: #ffffff;
+            overflow-x: hidden;
+        }
+
+        /* Animated Mesh Background */
+        .mesh-bg { position: fixed; top: 0; left: 0; width: 100vw; height: 100vh; z-index: -1; overflow: hidden; background: #030303; }
+        .blob1 { position: absolute; top: -10%; left: -10%; width: 50vw; height: 50vw; background: radial-gradient(circle, rgba(0,255,170,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(80px); animation: float 15s infinite alternate ease-in-out; }
+        .blob2 { position: absolute; bottom: -10%; right: -10%; width: 60vw; height: 60vw; background: radial-gradient(circle, rgba(0,115,255,0.15) 0%, rgba(0,0,0,0) 70%); filter: blur(100px); animation: float 20s infinite alternate-reverse ease-in-out; }
+        @keyframes float { 0% { transform: translate(0, 0) scale(1); } 100% { transform: translate(10%, 15%) scale(1.2); } }
+
+        /* Ultra Premium Glassmorphism */
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.02);
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+        }
+
+        /* 3D Hover Effects for Cards */
+        .service-card { transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1); }
+        .service-card:hover { 
+            transform: translateY(-10px) scale(1.02); 
+            border-color: rgba(0, 255, 170, 0.3);
+            box-shadow: 0 20px 40px rgba(0, 255, 170, 0.1);
+            background: rgba(255, 255, 255, 0.04);
+        }
+
+        /* Glowing Text */
+        .text-glow { text-shadow: 0 0 20px rgba(0, 255, 170, 0.3); }
+        .gradient-text { background: linear-gradient(135deg, #fff 0%, #a5a5a5 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .accent-gradient { background: linear-gradient(135deg, #00ffaa 0%, #0073ff 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* Scroll Animation Classes */
+        .reveal { opacity: 0; transform: translateY(40px); transition: all 0.8s cubic-bezier(0.5, 0, 0, 1); }
+        .reveal.active { opacity: 1; transform: translateY(0); }
+    </style>
 </head>
-<body class="bg-gray-50 text-gray-900">
+<body class="antialiased selection:bg-emerald-500 selection:text-black">
 
-<!-- NAVBAR Premium -->
-<nav class="sticky top-0 z-50 bg-white shadow-lg border-b border-green-100">
-  <div class="max-w-7xl mx-auto px-6">
-    <div class="flex justify-between items-center py-5">
-      <div class="flex items-center gap-4">
-        <div class="w-12 h-12 bg-green-700 rounded-full flex items-center justify-center text-white font-bold text-3xl">AS</div>
-        <div>
-          <h1 class="text-2xl font-bold text-green-800">Dr. Anand Singh</h1>
-          <p class="text-sm text-gray-600">Premium Homeopathic Care</p>
+    <div class="mesh-bg">
+        <div class="blob1"></div>
+        <div class="blob2"></div>
+    </div>
+
+    <nav class="fixed w-full z-50 glass-panel border-b border-white/5 top-0 transition-all duration-300">
+        <div class="max-w-7xl mx-auto px-6 py-5 flex justify-between items-center">
+            <div class="text-xl font-bold tracking-tighter">
+                DR. ANAND <span class="accent-gradient">SINGH</span>
+            </div>
+            <a href="#booking" class="bg-white/10 hover:bg-white text-white hover:text-black px-6 py-2 rounded-full text-sm font-semibold transition-all duration-300 border border-white/10 hover:shadow-[0_0_20px_rgba(255,255,255,0.3)]">
+                Book Slot
+            </a>
         </div>
-      </div>
+    </nav>
 
-      <!-- Desktop Menu + Search -->
-      <div class="hidden lg:flex items-center gap-8">
-        <div class="relative">
-          <input type="text" id="search" placeholder="Search treatments (e.g. Skin, Thyroid)" class="w-80 pl-10 pr-4 py-3 bg-gray-100 rounded-full focus:outline-none focus:ring-2 focus:ring-green-500 text-sm">
-          <i class="fas fa-search absolute left-4 top-1/2 transform -translate-y-1/2 text-gray-400"></i>
+    <header class="relative min-h-screen flex items-center justify-center pt-20 overflow-hidden px-6">
+        <div class="relative z-10 text-center max-w-5xl mx-auto reveal">
+            <div class="inline-block mb-6 px-4 py-1.5 rounded-full glass-panel border border-emerald-500/30 text-emerald-400 text-xs font-bold tracking-[0.2em] uppercase shadow-[0_0_15px_rgba(0,255,170,0.2)]">
+                <i class="fas fa-dna mr-2"></i> Advanced Constitutional Homeopathy
+            </div>
+            
+            <h1 class="text-6xl md:text-8xl font-extrabold tracking-tighter mb-8 leading-[1.1]">
+                Cure The <br>
+                <span class="accent-gradient text-glow">Uncurable.</span>
+            </h1>
+            
+            <p class="text-lg md:text-2xl text-gray-400 mb-12 max-w-3xl mx-auto font-light leading-relaxed">
+                Experience medical excellence. We architect wellness through genetic-level precision, curing complex lifestyle diseases from the root without side effects.
+            </p>
+            
+            <div class="flex flex-col sm:flex-row justify-center gap-6">
+                <a href="#booking" class="bg-gradient-to-r from-emerald-500 to-emerald-400 text-black px-10 py-4 rounded-full font-bold text-lg hover:scale-105 transition-transform duration-300 shadow-[0_0_30px_rgba(0,255,170,0.3)]">
+                    Start Treatment <i class="fas fa-arrow-right ml-2"></i>
+                </a>
+                <a href="#services" class="glass-panel text-white px-10 py-4 rounded-full font-bold text-lg hover:bg-white/10 transition-colors duration-300">
+                    Explore Science
+                </a>
+            </div>
         </div>
-        <a href="#about" class="font-medium hover:text-green-700 transition">About</a>
-        <a href="#treatments" class="font-medium hover:text-green-700 transition">Treatments</a>
-        <a href="#gallery" class="font-medium hover:text-green-700 transition">Gallery</a>
-        <a href="#reviews" class="font-medium hover:text-green-700 transition">Reviews</a>
-      </div>
+    </header>
 
-      <div class="flex items-center gap-4">
-        <a href="tel:+919415808611" class="hidden md:flex items-center gap-2 px-5 py-3 border border-green-700 text-green-700 rounded-full hover:bg-green-700 hover:text-white transition">
-          <i class="fas fa-phone"></i> Call
+    <section id="services" class="py-32 px-6 relative z-10">
+        <div class="max-w-7xl mx-auto">
+            <h2 class="text-4xl md:text-6xl font-bold text-center mb-20 gradient-text reveal">Holistic Health Matrix</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 100ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-emerald-500/20 flex items-center justify-center text-emerald-400 text-2xl mb-8 border border-emerald-500/30">
+                        <i class="fas fa-network-wired"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Comprehensive Chronic Care</h3>
+                    <p class="text-gray-400 leading-relaxed">Deep-rooted solutions for long-standing issues. We analyze your complete biological footprint to eliminate recurring diseases.</p>
+                </div>
+
+                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 200ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-blue-500/20 flex items-center justify-center text-blue-400 text-2xl mb-8 border border-blue-500/30">
+                        <i class="fas fa-microscope"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Constitutional Genetic Healing</h3>
+                    <p class="text-gray-400 leading-relaxed">Medicines mapped directly to your unique DNA structure and psychological profile for permanent recovery.</p>
+                </div>
+
+                <div class="glass-panel p-10 rounded-[2rem] service-card reveal" style="transition-delay: 300ms;">
+                    <div class="w-16 h-16 rounded-2xl bg-purple-500/20 flex items-center justify-center text-purple-400 text-2xl mb-8 border border-purple-500/30">
+                        <i class="fas fa-shield-virus"></i>
+                    </div>
+                    <h3 class="text-2xl font-bold mb-4">Advanced Immunity Building</h3>
+                    <p class="text-gray-400 leading-relaxed">Fortify your body's natural defense systems to fight off severe autoimmune conditions naturally.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="booking" class="py-32 px-6 relative z-10">
+        <div class="max-w-4xl mx-auto glass-panel p-10 md:p-16 rounded-[3rem] border border-emerald-500/20 reveal">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-4">Reserve Your Slot</h2>
+            <p class="text-center text-gray-400 mb-12">Fill the digital intake to begin your healing journey.</p>
+            
+            <form onsubmit="bookAppointment(event)" class="space-y-6">
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <input type="text" id="patientName" placeholder="Full Name" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
+                    <input type="tel" id="patientPhone" placeholder="Phone Number" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
+                </div>
+                <input type="text" id="patientIssue" placeholder="Briefly describe your medical condition" required class="w-full bg-white/5 border border-white/10 rounded-2xl p-5 text-white placeholder-gray-500 focus:outline-none focus:border-emerald-500 focus:bg-white/10 transition-all">
+                <button type="submit" class="w-full bg-white text-black font-bold text-xl py-5 rounded-2xl hover:bg-emerald-400 transition-colors shadow-[0_0_20px_rgba(255,255,255,0.2)] mt-4">
+                    Confirm Consultation
+                </button>
+            </form>
+        </div>
+    </section>
+
+    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <a href="tel:+919415808611" class="w-14 h-14 bg-red-500/20 backdrop-blur-md border border-red-500/50 text-red-500 rounded-full flex items-center justify-center text-xl shadow-[0_0_20px_rgba(239,68,68,0.4)] hover:scale-110 hover:bg-red-500 hover:text-white transition-all">
+            <i class="fas fa-phone"></i>
         </a>
-        <a href="#book" class="bg-green-700 text-white px-6 py-3 rounded-full font-semibold hover:bg-green-800 transition">Book Now</a>
-        <button id="menuBtn" class="lg:hidden text-3xl text-green-700">
-          <i class="fas fa-bars"></i>
-        </button>
-      </div>
+        <a href="https://wa.me/919415808611?text=Hi,%20I%20would%20like%20to%20book%20a%20premium%20consultation%20with%20Dr.%20Anand%20Singh." target="_blank" class="w-14 h-14 bg-emerald-500 backdrop-blur-md text-black rounded-full flex items-center justify-center text-3xl shadow-[0_0_30px_rgba(16,185,129,0.5)] hover:scale-110 hover:bg-white transition-all">
+            <i class="fab fa-whatsapp"></i>
+        </a>
     </div>
 
-    <!-- Mobile Menu -->
-    <div id="mobileMenu" class="hidden lg:hidden pb-6 space-y-4 text-lg font-medium">
-      <a href="#about" class="block hover:text-green-700">About</a>
-      <a href="#treatments" class="block hover:text-green-700">Treatments</a>
-      <a href="#gallery" class="block hover:text-green-700">Gallery</a>
-      <a href="#reviews" class="block hover:text-green-700">Reviews</a>
-      <a href="tel:+919415808611" class="block text-green-700">📞 Call Now</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO Full Premium -->
-<section class="hero-bg h-[90vh] flex items-center text-white relative fade-in">
-  <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
-    <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight">Root-Cause Healing with Premium Homeopathy</h1>
-    <p class="text-xl md:text-3xl mb-10 max-w-3xl mx-auto">20+ Years Experience • Safe • No Side Effects • Trusted Results</p>
-    <div class="flex flex-wrap justify-center gap-6">
-      <a href="#book" class="bg-white text-green-900 px-10 py-5 rounded-full font-bold text-xl hover:scale-105 transition shadow-lg">Book Consultation</a>
-      <a href="https://wa.me/919415808611?text=Hello%20Doctor%2C%20appointment%20ke%20liye%20baat%20karni%20hai" class="border-2 border-white px-10 py-5 rounded-full font-bold text-xl hover:bg-white hover:text-green-900 transition">WhatsApp Now</a>
-    </div>
-  </div>
-</section>
-
-<!-- About + Counters -->
-<section id="about" class="py-24 bg-white fade-in">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-12">About Dr. Anand Singh</h2>
-    <p class="text-lg text-gray-700 max-w-4xl mx-auto text-center leading-relaxed mb-16">
-      Senior Homeopathic Consultant with over 20 years in classical & modern homeopathy. Specializing in chronic illnesses, skin disorders, respiratory issues, and holistic wellness. Personalized, root-cause treatments for lasting relief.
-    </p>
-    <div class="grid md:grid-cols-3 gap-12 text-center">
-      <div>
-        <div class="text-6xl font-bold text-green-700">20+</div>
-        <p class="text-xl font-semibold mt-4">Years of Excellence</p>
-      </div>
-      <div>
-        <div class="text-6xl font-bold text-green-700">5000+</div>
-        <p class="text-xl font-semibold mt-4">Happy Patients</p>
-      </div>
-      <div>
-        <div class="text-6xl font-bold text-green-700">98%</div>
-        <p class="text-xl font-semibold mt-4">Satisfaction Rate</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Treatments Grid -->
-<section id="treatments" class="py-24 bg-green-50 fade-in">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-16">Specialized Treatments</h2>
-    <div class="grid md:grid-cols-3 gap-10">
-      <div class="card bg-white p-8 rounded-2xl shadow-xl">
-        <h3 class="text-2xl font-bold text-green-700 mb-4">Chronic Diseases</h3>
-        <p class="text-gray-600">Diabetes, Thyroid, Arthritis – long-term holistic care.</p>
-      </div>
-      <div class="card bg-white p-8 rounded-2xl shadow-xl">
-        <h3 class="text-2xl font-bold text-green-700 mb-4">Skin Disorders</h3>
-        <p class="text-gray-600">Eczema, Psoriasis, Acne – clear skin naturally.</p>
-      </div>
-      <!-- Add 3-4 more cards similarly for Respiratory, Child Health, etc. -->
-    </div>
-  </div>
-</section>
-
-<!-- Gallery / Before-After -->
-<section id="gallery" class="py-24 bg-white fade-in">
-  <div class="max-w-6xl mx-auto px-6">
-    <h2 class="text-4xl md:text-5xl font-bold text-center text-green-800 mb-16">Before & After Results</h2>
-    <div class="grid md:grid-cols-3 gap-8">
-      <!-- Add 6 cards with placeholder images -->
-      <div class="overflow-hidden rounded-2xl shadow-xl">
-        <img src="https://via.placeholder.com/600x400?text=Before+Treatment" alt="Before" class="w-full h-80 object-cover">
-        <div class="p-6 bg-gray-50">
-          <h4 class="font-bold text-xl">Before</h4>
+    <footer class="py-12 border-t border-white/10 relative z-10 mt-20 text-center">
+        <p class="text-gray-500 text-sm tracking-widest uppercase mb-4">© 2026 Dr. Anand Singh Clinic</p>
+        <div class="inline-block px-6 py-2 glass-panel rounded-full text-xs font-semibold tracking-wider">
+            <span class="text-gray-400">Crafted by</span> <span class="text-emerald-400">Deepak Sisodiya</span>
         </div>
-      </div>
-      <!-- Duplicate for After images -->
-    </div>
-  </div>
-</section>
+    </footer>
 
-<!-- Booking Form -->
-<section id="book" class="py-24 bg-green-50 fade-in">
-  <div class="max-w-2xl mx-auto px-6">
-    <h2 class="text-4xl font-bold text-center text-green-800 mb-12">Book Your Appointment</h2>
-    <form id="bookForm" class="space-y-6 bg-white p-10 rounded-2xl shadow-2xl">
-      <input type="text" placeholder="Full Name" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-      <input type="tel" placeholder="Phone Number" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-      <input type="date" required class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500">
-      <textarea placeholder="Your Health Concern" rows="4" class="w-full p-4 border rounded-lg focus:outline-none focus:ring-2 focus:ring-green-500"></textarea>
-      <button type="submit" class="w-full bg-green-700 text-white py-4 rounded-lg font-bold text-lg hover:bg-green-800 transition">Send on WhatsApp</button>
-    </form>
-  </div>
-</section>
+    <script>
+        // Scroll Animation Observer (Simulates Framer Motion)
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('active');
+                }
+            });
+        }, { threshold: 0.1 });
 
-<!-- Footer -->
-<footer class="bg-green-900 text-white py-16 text-center">
-  <p class="text-2xl font-bold">📞 +91 94158 08611</p>
-  <p class="mt-4 text-lg">© 2026 Dr. Anand Singh | Designed by Deepak Sisodiya</p>
-</footer>
+        document.querySelectorAll('.reveal').forEach((el) => observer.observe(el));
 
-<!-- Floating WhatsApp -->
-<a href="https://wa.me/919415808611" class="fixed bottom-8 right-8 bg-green-600 text-white p-5 rounded-full shadow-2xl text-4xl hover:scale-110 transition z-50">
-  <i class="fab fa-whatsapp"></i>
-</a>
-
-<script>
-// Hamburger Menu
-document.getElementById("menuBtn").addEventListener("click", () => {
-  document.getElementById("mobileMenu").classList.toggle("hidden");
-});
-
-// Form to WhatsApp
-document.getElementById("bookForm").addEventListener("submit", (e) => {
-  e.preventDefault();
-  const name = e.target[0].value;
-  const phone = e.target[1].value;
-  const date = e.target[2].vale;
-  const concern = e.target[3].value;
-  const msg = `*Appointment Request*%0AName: ${name}%0APhone: ${phone}%0ADate: ${date}%0AConcern: ${concern}`;
-  window.open(`https://wa.me/919415808611?text=${msg}`, "_blank");
-  e.target.reset();
-});
-
-// Fade-in on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add("show"); });
-});
-document.querySelectorAll(".fade-in").forEach(el => observer.observe(el));
-</script>
-
+        // Booking Form to WhatsApp Logic
+        function bookAppointment(e) {
+            e.preventDefault();
+            const name = document.getElementById('patientName').value;
+            const phone = document.getElementById('patientPhone').value;
+            const issue = document.getElementById('patientIssue').value;
+            
+            const message = `*PREMIUM CONSULTATION BOOKING*%0A%0A*Name:* ${name}%0A*Contact:* ${phone}%0A*Condition:* ${issue}`;
+            window.open(`https://wa.me/919415808611?text=${message}`, '_blank');
+        }
+    </script>
 </body>
-</html>   </html>
+</html>
