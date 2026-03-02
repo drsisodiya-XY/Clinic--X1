@@ -174,7 +174,7 @@ document.getElementById("bookForm").addEventListener("submit", (e) => {
   e.preventDefault();
   const name = e.target[0].value;
   const phone = e.target[1].value;
-  const date = e.target[2].value;
+  const date = e.target[2].vale;
   const concern = e.target[3].value;
   const msg = `*Appointment Request*%0AName: ${name}%0APhone: ${phone}%0ADate: ${date}%0AConcern: ${concern}`;
   window.open(`https://wa.me/919415808611?text=${msg}`, "_blank");
