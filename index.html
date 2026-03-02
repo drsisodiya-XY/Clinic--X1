@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dr. Anand Singh | Advanced Homeopathy</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap" rel="stylesheet">
+    <style>
+        body { background-color: #020617; font-family: 'Inter', sans-serif; color: white; overflow-x: hidden; }
+        .mesh-bg { position: fixed; inset: 0; z-index: -1; opacity: 0.5; }
+        .glow-1 { position: absolute; top: -20%; left: -10%; width: 60%; height: 60%; background: radial-gradient(circle, rgba(16,185,129,0.3) 0%, transparent 70%); filter: blur(80px); animation: pulse 4s infinite alternate; }
+        .glow-2 { position: absolute; bottom: -20%; right: -10%; width: 60%; height: 60%; background: radial-gradient(circle, rgba(59,130,246,0.2) 0%, transparent 70%); filter: blur(80px); }
+        .glass-card { background: rgba(255, 255, 255, 0.03); backdrop-filter: blur(16px); border: 1px solid rgba(255, 255, 255, 0.05); border-radius: 2rem; transition: transform 0.3s, border-color 0.3s; }
+        .glass-card:hover { transform: translateY(-10px); border-color: rgba(16, 185, 129, 0.4); background: rgba(16, 185, 129, 0.05); }
+        .text-gradient { background: linear-gradient(180deg, #FFFFFF 0%, #9CA3AF 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        @keyframes pulse { 0% { transform: scale(1); opacity: 0.5; } 100% { transform: scale(1.1); opacity: 0.8; } }
+    </style>
+</head>
+<body class="antialiased selection:bg-emerald-500/30">
+    <div class="mesh-bg"><div class="glow-1"></div><div class="glow-2"></div></div>
+
+    <section class="min-h-screen flex flex-col items-center justify-center text-center px-6 relative z-10 pt-20 pb-10">
+        <div class="inline-flex items-center gap-2 px-5 py-2 mb-8 border border-emerald-500/30 bg-emerald-500/10 rounded-full text-emerald-400 text-sm font-bold tracking-wide shadow-[0_0_15px_rgba(16,185,129,0.2)]">
+            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span> Est. 1999 | 25+ Years Exp.
+        </div>
+        <h1 class="text-6xl md:text-8xl font-black tracking-tighter mb-6 leading-[1.1] text-gradient">
+            CURE THE<br>
+            <span class="text-emerald-500 drop-shadow-[0_0_20px_rgba(16,185,129,0.4)]" style="-webkit-text-fill-color: #10b981;">UNCURABLE</span>
+        </h1>
+        <p class="text-gray-400 text-lg md:text-xl max-w-2xl mb-12 leading-relaxed">
+            Advanced Homeopathic care for Chronic, Lifestyle, and Complex diseases. Root-cause healing without side effects by <strong>Dr. Anand Singh</strong>.
+        </p>
+        <div class="flex flex-col sm:flex-row gap-6 items-center">
+            <a href="https://wa.me/919415808611" class="px-10 py-5 bg-emerald-600 hover:bg-emerald-500 rounded-2xl font-bold shadow-[0_0_30px_rgba(16,185,129,0.3)] transition-all scale-100 hover:scale-105 w-full sm:w-auto text-lg text-white">
+                Book Consultation
+            </a>
+            <div class="flex items-center gap-3 text-gray-400 font-medium text-sm">
+                <div class="flex -space-x-3">
+                    <div class="w-10 h-10 rounded-full bg-gray-700 border-2 border-[#020617] flex items-center justify-center">🤝</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-600 border-2 border-[#020617] flex items-center justify-center">⭐</div>
+                    <div class="w-10 h-10 rounded-full bg-gray-800 border-2 border-[#020617] flex items-center justify-center text-xs">+</div>
+                </div>
+                <span>50k+ Cured Patients</span>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-24 px-6 max-w-7xl mx-auto relative z-10">
+        <h2 class="text-4xl font-bold mb-16 text-center tracking-tight">Holistic Mastery</h2>
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="glass-card p-10">
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">🛡️</div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Skin & Autoimmune</h3>
+                <p class="text-gray-400 leading-relaxed">Permanent relief from Psoriasis, Eczema, Vitiligo, and severe allergic conditions.</p>
+            </div>
+            <div class="glass-card p-10">
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">⚕️</div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Chronic Pains</h3>
+                <p class="text-gray-400 leading-relaxed">Advanced treatment for Arthritis, Cervical Spondylitis, Sciatica, and Migraines.</p>
+            </div>
+            <div class="glass-card p-10">
+                <div class="w-14 h-14 bg-emerald-500/20 rounded-2xl flex items-center justify-center mb-6 text-2xl">❤️</div>
+                <h3 class="text-2xl font-bold mb-3 text-white">Lifestyle Diseases</h3>
+                <p class="text-gray-400 leading-relaxed">Effective management of Diabetes, Blood Pressure, Thyroid, and Liver-Kidney issues.</p>
+            </div>
+        </div>
+    </section>
+
+    <section class="py-32 px-6 bg-emerald-500/5 relative z-10 text-center border-y border-white/5 mt-10">
+        <div class="text-emerald-400 text-3xl mb-8 tracking-widest drop-shadow-[0_0_10px_rgba(16,185,129,0.5)]">★★★★★</div>
+        <h2 class="text-3xl md:text-5xl font-bold italic max-w-4xl mx-auto mb-10 leading-snug text-gray-200">
+            "The transformation I saw in my chronic ailments was nothing short of a miracle. Truly the best homeopathic care."
+        </h2>
+        <p class="text-emerald-500 font-bold uppercase tracking-widest text-sm">— Verified Patient Feedback</p>
+    </section>
+
+    <div class="fixed bottom-8 right-8 flex flex-col gap-4 z-50">
+        <a href="https://wa.me/919415808611" class="w-16 h-16 bg-green-500 rounded-full shadow-[0_10px_25px_rgba(34,197,94,0.4)] flex items-center justify-center text-3xl hover:scale-110 transition-transform">💬</a>
+        <a href="tel:+919415808611" class="w-16 h-16 bg-red-600 rounded-full shadow-[0_10px_25px_rgba(220,38,38,0.4)] flex items-center justify-center text-3xl animate-pulse hover:scale-110 transition-transform">📞</a>
+    </div>
+
+    <footer class="py-12 px-6 border-t border-white/5 relative z-10 mt-10">
+        <div class="max-w-7xl mx-auto flex flex-col md:flex-row justify-between items-center gap-6">
+            <div class="text-center md:text-left">
+                <h3 class="text-xl font-bold text-emerald-500 mb-1">Dr. Anand Singh</h3>
+                <p class="text-gray-500 text-sm">Advanced Homeopathy Clinic</p>
+            </div>
+            <p class="text-gray-600 text-sm">
+                Master-Crafted by <span class="text-gray-300 font-serif italic tracking-widest ml-1">DEEPAK SISODIYA</span>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
